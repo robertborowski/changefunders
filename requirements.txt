@@ -1,0 +1,12 @@
+pandas
+flask
+flask_sqlalchemy
+flask_login
+sqlalchemy
+datetime
+uuid
+redis
+psycopg2
+boto3
+sendgrid
+stripe
