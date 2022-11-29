@@ -10,7 +10,7 @@ import stripe
 # ------------------------ imports end ------------------------
 
 
-localhost_print_function(' ------------------------- __init__ website start -------------------------')
+localhost_print_function(' ------------------------ __init__ website start ------------------------')
 # ------------------------ define/initialize a new db sql_alchemy function start ------------------------
 # what is SQLAlchemy: https://www.youtube.com/watch?v=6k6NxFyKKQo&ab_channel=Treehouse
 # transfers data stored in a SQL database into python objects. (models.py file)
@@ -28,7 +28,7 @@ secret_key_ref = os.urandom(64)
 
 # ------------------------ __init__ function start ------------------------
 def create_app_function():
-  localhost_print_function(' ------------------------- create_app_function start -------------------------')
+  localhost_print_function(' ------------------------ create_app_function start ------------------------')
   # ------------------------ app setup start ------------------------
   # ------------------------ set timezone start ------------------------
   # Set the timezone of the application when user creates account is will be in US/Easterm time
@@ -58,7 +58,7 @@ def create_app_function():
   # inbuilt function which takes error as parameter
   def not_found(e):
     # localhost_print_function('exception hit create_app_function')
-    localhost_print_function(' ------------------------- create_app_function end -------------------------')
+    localhost_print_function(' ------------------------ create_app_function end ------------------------')
     return render_template("not_signed_in/error_404_page_templates/index.html")
   # ------------------------ Handleing Error Messages END ------------------------
   # ------------------------ stripe api environment start ------------------------
@@ -91,13 +91,13 @@ def create_app_function():
     # logged_in_user_dict = UserObj.query.get(id).__dict__
     # print(logged_in_user_dict['first_name'])
     # ------------------------ list user dict directly from postgres end ------------------------
-    localhost_print_function(' ------------------------- create_app_function end -------------------------')
+    localhost_print_function(' ------------------------ create_app_function end ------------------------')
     return UserObj.query.get(id)  # when you write query.get -> .get: automatically knows it is looking through the primary key in sqlite
   # ------------------------ function end ------------------------
   # ------------------------ login manager end ------------------------
   # ------------------------ app setup end ------------------------
   localhost_print_function('returning app')
-  localhost_print_function(' ------------------------- create_app_function end -------------------------')
+  localhost_print_function(' ------------------------ create_app_function end ------------------------')
   return app
 # ------------------------ __init__ function end ------------------------
 
@@ -111,11 +111,11 @@ def create_database_function(app):
   """
   localhost_print_function('=========================================== create_database_function START ===========================================')
   if not path.exists('website/' + DB_NAME):
-    db.create_all(app=app)
+    # db.create_all(app=app)
     print('Created database!')
   else:
     print('Database already exists!')
     pass
   localhost_print_function('=========================================== create_database_function END ===========================================')
 # ------------------------ create_db_function end ------------------------
-localhost_print_function(' ------------------------- __init__ website end -------------------------')
+localhost_print_function(' ------------------------ __init__ website end ------------------------')

@@ -22,7 +22,7 @@ views = Blueprint('views', __name__)
 # ------------------------ individual route start ------------------------
 @views.route('/')
 def landing_index_page_function():
-  localhost_print_function(' ------------------------- landing_index_page_function start -------------------------')
-  localhost_print_function(' ------------------------- landing_index_page_function end -------------------------')
+  localhost_print_function(' ------------------------ landing_index_page_function start ------------------------')
+  localhost_print_function(' ------------------------ landing_index_page_function end ------------------------')
   return render_template('not_signed_in/landing/index.html', user=current_user)
 # ------------------------ individual route end ------------------------
