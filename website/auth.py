@@ -24,5 +24,5 @@ auth = Blueprint('auth', __name__)
 def landing_index_page_function():
   localhost_print_function(' ------------------------- landing_index_page_function start -------------------------')
   localhost_print_function(' ------------------------- landing_index_page_function end -------------------------')
-  return render_template('candidates_page_templates/not_logged_in_page_templates/index_page_templates/index.html', user=current_user)
+  return render_template('not_signed_in/landing/index.html', user=current_user)
 # ------------------------ individual route end ------------------------
