@@ -1,4 +1,5 @@
 # ------------------------ imports start ------------------------
+from website.backend.utils.printing import localhost_print_function
 import os, time
 from os import path
 import datetime
@@ -6,7 +7,6 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 import stripe
-from website.backend.utils.printing import localhost_print_function
 # ------------------------ imports end ------------------------
 
 
