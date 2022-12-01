@@ -14,6 +14,7 @@ class UserObj(db.Model, UserMixin):   # Only the users object inherits UserMixin
   id = db.Column(db.String(150), primary_key=True)
   created_timestamp = db.Column(db.DateTime(timezone=True))
   email = db.Column(db.String(150), unique=True)
+  phone = db.Column(db.String(20), unique=True)
   password = db.Column(db.String(150))
   name = db.Column(db.String(150))
   username = db.Column(db.String(150))

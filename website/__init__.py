@@ -62,7 +62,7 @@ def create_app_function():
     return render_template("not_signed_in/error_404_page_templates/index.html")
   # ------------------------ Handleing Error Messages END ------------------------
   # ------------------------ stripe api environment start ------------------------
-  # stripe.api_key = os.environ.get('STRIPE_API_KEY')  # PRODUCTION
+  # stripe.api_key = os.environ.get('STRIPE_API_KEY')  # PRODUCTION for triviafy, not changefunders
   stripe.api_key = os.environ.get('STRIPE_TEST_API_KEY')  # TESTING
   # ------------------------ stripe api environment end ------------------------
   # ------------------------ views/auths/routes imports start ------------------------
@@ -88,8 +88,10 @@ def create_app_function():
   def load_user(id):
     localhost_print_function('def load_user function hit')
     # ------------------------ list user dict directly from postgres start ------------------------
-    # logged_in_user_dict = UserObj.query.get(id).__dict__
-    # print(logged_in_user_dict['first_name'])
+    logged_in_user_dict = UserObj.query.get(id).__dict__
+    localhost_print_function(' -------010------- ')
+    localhost_print_function(logged_in_user_dict['first_name'])
+    localhost_print_function(' -------010------- ')
     # ------------------------ list user dict directly from postgres end ------------------------
     localhost_print_function(' ------------------------ create_app_function end ------------------------')
     return UserObj.query.get(id)  # when you write query.get -> .get: automatically knows it is looking through the primary key in sqlite
