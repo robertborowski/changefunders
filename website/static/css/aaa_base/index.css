@@ -1,3 +1,21 @@
-.border1 {
+.visual-hidden {
+  display: none;
+}
+.border-black {
   border: 1px solid black;
+}
+.border-blue {
+  border: 1px solid blue;
+}
+.border-red {
+  border: 1px solid red;
+}
+.border-green {
+  border: 1px solid green;
+}
+.border-purple {
+  border: 1px solid purple;
+}
+.border-orange {
+  border: 1px solid orange;
 }
