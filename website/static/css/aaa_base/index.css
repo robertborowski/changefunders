@@ -1,6 +1,14 @@
 .visual-hidden {
   display: none;
 }
+.nav-link {
+  color: rgba(164, 164, 164, 0.6);
+}
+.nav-link:hover {
+  /* color: var(--bs-primary); */
+  color: black;
+  transition: 0.5s;
+}
 .border-black {
   border: 1px solid black;
 }

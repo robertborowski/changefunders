@@ -1,2 +1,0 @@
-When making a change to the bootstrap defaults, run this compiler to commit
-sass scss/custom.scss:website/static/css/custom_bootstrap.css
