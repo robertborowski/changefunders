@@ -1,6 +1,7 @@
+//custom.scss
+
 $theme-colors: (
-  "primary": red,
-  "danger": green
+  "primary": #17d4ff,
 );
 
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap";
