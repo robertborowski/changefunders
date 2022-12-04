@@ -9,6 +9,10 @@
   color: black;
   transition: 0.5s;
 }
+.bg-custom-lighter {
+  /* background-color: rgb(255, 248, 212); */
+  background-color: #fef2da;
+}
 .border-black {
   border: 1px solid black;
 }
