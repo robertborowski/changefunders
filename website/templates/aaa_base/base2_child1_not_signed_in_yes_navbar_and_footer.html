@@ -7,11 +7,9 @@
 
 {% block contentBody %}
 <!-- ------------------------------------- navbar start ------------------------------------- -->
-<div class="container">
-  <nav class="navbar navbar-expand-md navbar-light">
+<div class="container-fluid bg-custom-white fixed-top">
+  <nav class="container navbar navbar-expand-md navbar-light">
     <a href="/" class="navbar-brand">
-      <!-- <img src="/static/images/logo/deltachange.png" alt="logo" width="30" height="24" class="d-inline-block align-top"> -->
-      <!-- <span class="visual-hidden">changefunders</span> -->
       <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funders</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-lable="Toggle navigation">
@@ -27,6 +25,9 @@
   </nav>
 </div>
 <!-- ------------------------------------- navbar end ------------------------------------- -->
+<!-- ------------------------------------- navbar filler start ------------------------------------- -->
+<div class="custom-height-navbar-1"></div>
+<!-- ------------------------------------- navbar filler end ------------------------------------- -->
 {% block contentBodyExceptNavbarAndFooter %}
 {% endblock %}
 <!-- ------------------------------------- footer start ------------------------------------- -->
