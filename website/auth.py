@@ -15,7 +15,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 from website import db
 from .models import UserObj, CollectEmailObj
 from website.backend.utils.user_inputs import sanitize_email_function, sanitize_password_function
-from website.backend.utils.uuid_and_timestamp import create_uuid_function, create_timestamp_function
+from website.backend.utils.uuid_and_timestamp import create_uuid_function, create_timestamp_function, generate_username_uuid_function
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 # ------------------------ imports end ------------------------
@@ -95,17 +95,24 @@ def signup_function():
                               redirect_var_password=ui_password)
     # ------------------------ check if user email already exists in db start ------------------------
     else:
+      # ------------------------ generate unique username start ------------------------
+      randomly_generated_username = generate_username_uuid_function(6)
+      username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
+      while username_exists != None:
+        randomly_generated_username = generate_username_uuid_function(6)
+        username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
+      # ------------------------ generate unique username end ------------------------
       # ------------------------ create new user in db start ------------------------
       new_user = UserObj(
         id=create_uuid_function('user_'),
         created_timestamp=create_timestamp_function(),
         email=ui_email,
-        # phone=None,
-        password=generate_password_hash(ui_password, method="sha256")
-        # name=None,
-        # username=None,
-        # fk_stripe_customer_id=None,
-        # fk_stripe_subscription_id=None
+        phone=None,
+        password=generate_password_hash(ui_password, method="sha256"),
+        name=None,
+        username=randomly_generated_username,
+        fk_stripe_customer_id=None,
+        fk_stripe_subscription_id=None
       )
       db.session.add(new_user)
       db.session.commit()
