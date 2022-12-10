@@ -160,12 +160,11 @@ def login_page_function():
       pass
   # ------------------------ auto sign in with cookie end ------------------------
   login_error_statement = ''
-  """
   if request.method == 'POST':
     # ------------------------ post method hit #1 - regular login start ------------------------
     # ------------------------ post request sent start ------------------------
-    ui_email = request.form.get('login_page_ui_email')
-    ui_password = request.form.get('login_page_ui_password')
+    ui_email = request.form.get('uiEmail')
+    ui_password = request.form.get('uiPassword')
     # ------------------------ post request sent end ------------------------
     # ------------------------ sanitize/check user input email start ------------------------
     ui_email_cleaned = sanitize_email_function(ui_email)
@@ -183,13 +182,18 @@ def login_page_function():
         # ------------------------ keep user logged in start ------------------------
         login_user(user, remember=True)
         # ------------------------ keep user logged in end ------------------------
-        return redirect(url_for('views.dashboard_test_login_page_function'))
+        return redirect(url_for('views_si.dashboard_page_function'))
       else:
         login_error_statement = 'Incorrect email/password, try again.'
     else:
       login_error_statement = 'Incorrect email/password, try again.'
+    if login_error_statement != '':
+      localhost_print_function(' ------------------------ login_page_function end ------------------------ ')
+      return render_template('not_signed_in/login/index.html',
+                              user=current_user,
+                              error_message_to_html=login_error_statement,
+                              redirect_var_email=ui_email)
     # ------------------------ post method hit #1 - regular login end ------------------------
-  """
   localhost_print_function(' ------------------------ login_page_function end ------------------------ ')
   return render_template('not_signed_in/login/index.html', user=current_user, error_message_to_html=login_error_statement)
 # ------------------------ individual route end ------------------------

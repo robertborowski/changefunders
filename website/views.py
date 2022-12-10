@@ -26,3 +26,38 @@ def landing_index_page_function():
   localhost_print_function(' ------------------------ landing_index_page_function end ------------------------')
   return render_template('not_signed_in/landing/index.html', user=current_user)
 # ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/reset', methods=['GET', 'POST'])
+def forgot_password_page_function():
+  localhost_print_function(' ------------------------ forgot_password_page_function start ------------------------')
+  forgot_password_error_statement = ''
+  """
+  if request.method == 'POST':
+    # ------------------------ post request sent start ------------------------
+    ui_email = request.form.get('forgot_password_page_ui_email')
+    # ------------------------ post request sent end ------------------------
+    # ------------------------ sanitize/check user input email start ------------------------
+    ui_email_cleaned = sanitize_email_function(ui_email)
+    if ui_email_cleaned == False:
+      forgot_password_error_statement = 'Please enter a valid work email.'
+    # ------------------------ sanitize/check user input email end ------------------------
+    # ------------------------ check if user email exists in db start ------------------------
+    user_exists = CandidatesUserObj.query.filter_by(email=ui_email).first()
+    if user_exists:
+      forgot_password_error_statement = 'Password reset link sent to email.'
+      # ------------------------ send email with token url start ------------------------
+      serializer_token_obj = CandidatesUserObj.get_reset_token_function(self=user_exists)
+      output_email = ui_email
+      output_subject_line = 'Password Reset - Triviafy'
+      output_message_content = f"To reset your password, visit the following link: https://triviafy.com/candidates/reset/{serializer_token_obj} \n\nThis link will expire after 30 minutes.\nIf you did not make this request then simply ignore this email and no changes will be made."
+      send_email_template_function(output_email, output_subject_line, output_message_content)
+      # ------------------------ send email with token url end ------------------------
+    else:
+      forgot_password_error_statement = 'Password reset link sent to email.'
+      pass
+    # ------------------------ check if user email exists in db end ------------------------
+  """
+  localhost_print_function(' ------------------------ forgot_password_page_function end ------------------------')
+  return render_template('not_signed_in/forgot_password/index.html', user=current_user, error_message_to_html=forgot_password_error_statement)
+# ------------------------ individual route end ------------------------

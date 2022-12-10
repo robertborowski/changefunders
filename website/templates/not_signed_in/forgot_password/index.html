@@ -16,19 +16,12 @@
   <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg bg-custom-grey-1">
     <div class="mb-3">
       <label for="uiEmail" class="form-label">Email</label>
-      <input type="email" class="form-control " id="uiEmail" name="uiEmail" value="{{ redirect_var_email }}">
-    </div>
-    <div class="mb-4">
-      <label for="uiPassword" class="form-label">Password</label>
-      <input type="password" class="form-control" id="uiPassword" name="uiPassword" value="{{ redirect_var_password }}">
+      <input type="email" class="form-control " id="uiEmail" name="uiEmail">
     </div>
     <div class="text-center">
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-primary">Send email</button>
     </div>
   </form>
-  <div class="border-red">
-    <a href="/reset">Forgot password</a>
-  </div>
   <div class="custom-height-filler-1"></div>
 </div>
 {% endblock %}
