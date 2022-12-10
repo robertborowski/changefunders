@@ -12,18 +12,33 @@
 from website.backend.utils.printing import localhost_print_function
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from flask_login import login_required, current_user, login_user
+from website.backend.redis import redis_connect_to_database_function, redis_check_if_cookie_exists_function
+from website.backend.utils.browser import browser_response_set_cookie_function
 # ------------------------ imports end ------------------------
 
 
 # ------------------------ function start ------------------------
 views_si = Blueprint('views_si', __name__)
 # ------------------------ function end ------------------------
+# ------------------------ connect to redis start ------------------------
+redis_connection = redis_connect_to_database_function()
+# ------------------------ connect to redis end ------------------------
 
 # ------------------------ individual route start ------------------------
 @views_si.route('/dashboard')
 @login_required
 def dashboard_page_function():
   localhost_print_function(' ------------------------ dashboard_page_function start ------------------------')
-  localhost_print_function(' ------------------------ dashboard_page_function end ------------------------')
-  return render_template('signed_in/dashboard/index.html', user=current_user)
+  template_location_url = 'signed_in/dashboard/index.html'
+  # ------------------------ auto set cookie start ------------------------
+  get_cookie_value_from_browser = redis_check_if_cookie_exists_function()
+  if get_cookie_value_from_browser != None:
+    redis_connection.set(get_cookie_value_from_browser, current_user.id.encode('utf-8'))
+    localhost_print_function(' ------------------------ dashboard_page_function end ------------------------')
+    return render_template(template_location_url, user=current_user)
+  else:
+    browser_response = browser_response_set_cookie_function(current_user, template_location_url)
+    localhost_print_function(' ------------------------ dashboard_page_function end ------------------------')
+    return browser_response
+  # ------------------------ auto set cookie end ------------------------
 # ------------------------ individual route end ------------------------

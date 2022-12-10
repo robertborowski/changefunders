@@ -24,9 +24,6 @@ import os
 # ------------------------ function start ------------------------
 auth = Blueprint('auth', __name__)
 # ------------------------ function end ------------------------
-# ------------------------ before page variables start ------------------------
-cache_busting_output = create_uuid_function('css_')
-# ------------------------ before page variables end ------------------------
 
 # ------------------------ individual route start ------------------------
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -138,3 +135,22 @@ def signup_function():
   localhost_print_function(' ------------------------ signup_function end ------------------------ ')
   return render_template('not_signed_in/sign_up/index.html',user=current_user,error_message_to_html=sign_up_error_message)
 # ------------------------ individual route end ------------------------
+
+"""
+# ------------------------ individual route start ------------------------
+@auth.route('/logout')
+@login_required
+def logout_function():
+  localhost_print_function(' ------------------------ logout_function start ------------------------ ')
+  logout_user()
+  # ------------------------ auto sign in with cookie start ------------------------
+  get_cookie_value_from_browser = redis_check_if_cookie_exists_function()
+  # ------------------------ auto sign in with cookie end ------------------------
+  if get_cookie_value_from_browser != None:
+    try:
+      redis_connection.delete(get_cookie_value_from_browser)
+    except:
+      pass
+  # ------------------------ auto sign in with cookie end ------------------------
+  localhost_print_function(' ------------------------ logout_function end ------------------------ ')
+"""
