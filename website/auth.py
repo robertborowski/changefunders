@@ -18,12 +18,16 @@ from website.backend.utils.user_inputs import sanitize_email_function, sanitize_
 from website.backend.utils.uuid_and_timestamp import create_uuid_function, create_timestamp_function, generate_username_uuid_function
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+from website.backend.redis import redis_connect_to_database_function, redis_check_if_cookie_exists_function
 # ------------------------ imports end ------------------------
 
 
 # ------------------------ function start ------------------------
 auth = Blueprint('auth', __name__)
 # ------------------------ function end ------------------------
+# ------------------------ connect to redis start ------------------------
+redis_connection = redis_connect_to_database_function()
+# ------------------------ connect to redis end ------------------------
 
 # ------------------------ individual route start ------------------------
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -136,7 +140,60 @@ def signup_function():
   return render_template('not_signed_in/sign_up/index.html',user=current_user,error_message_to_html=sign_up_error_message)
 # ------------------------ individual route end ------------------------
 
-"""
+# ------------------------ individual route start ------------------------
+@auth.route('/login', methods=['GET', 'POST'])
+def login_page_function():
+  localhost_print_function(' ------------------------ login_page_function start ------------------------ ')
+  # ------------------------ auto sign in with cookie start ------------------------
+  get_cookie_value_from_browser = redis_check_if_cookie_exists_function()
+  if get_cookie_value_from_browser != None:
+    try:
+      user_id_from_redis = redis_connection.get(get_cookie_value_from_browser).decode('utf-8')
+      if user_id_from_redis != None:
+        user = UserObj.query.filter_by(id=user_id_from_redis).first()
+        # ------------------------ keep user logged in start ------------------------
+        login_user(user, remember=True)
+        # ------------------------ keep user logged in end ------------------------
+        localhost_print_function('redirecting to logged in page')
+        return redirect(url_for('views_si.dashboard_page_function'))
+    except:
+      pass
+  # ------------------------ auto sign in with cookie end ------------------------
+  login_error_statement = ''
+  """
+  if request.method == 'POST':
+    # ------------------------ post method hit #1 - regular login start ------------------------
+    # ------------------------ post request sent start ------------------------
+    ui_email = request.form.get('login_page_ui_email')
+    ui_password = request.form.get('login_page_ui_password')
+    # ------------------------ post request sent end ------------------------
+    # ------------------------ sanitize/check user input email start ------------------------
+    ui_email_cleaned = sanitize_email_function(ui_email)
+    if ui_email_cleaned == False:
+      login_error_statement = 'Please enter a valid work email.'
+    # ------------------------ sanitize/check user input email end ------------------------
+    # ------------------------ sanitize/check user input password start ------------------------
+    ui_password_cleaned = sanitize_password_function(ui_password)
+    if ui_password_cleaned == False:
+      login_error_statement = 'Password is not valid.'
+    # ------------------------ sanitize/check user input password end ------------------------
+    user = UserObj.query.filter_by(email=ui_email).first()
+    if user:
+      if check_password_hash(user.password, ui_password):
+        # ------------------------ keep user logged in start ------------------------
+        login_user(user, remember=True)
+        # ------------------------ keep user logged in end ------------------------
+        return redirect(url_for('views.dashboard_test_login_page_function'))
+      else:
+        login_error_statement = 'Incorrect email/password, try again.'
+    else:
+      login_error_statement = 'Incorrect email/password, try again.'
+    # ------------------------ post method hit #1 - regular login end ------------------------
+  """
+  localhost_print_function(' ------------------------ login_page_function end ------------------------ ')
+  return render_template('not_signed_in/login/index.html', user=current_user, error_message_to_html=login_error_statement)
+# ------------------------ individual route end ------------------------
+
 # ------------------------ individual route start ------------------------
 @auth.route('/logout')
 @login_required
@@ -153,4 +210,5 @@ def logout_function():
       pass
   # ------------------------ auto sign in with cookie end ------------------------
   localhost_print_function(' ------------------------ logout_function end ------------------------ ')
-"""
+  return redirect(url_for('views.landing_index_page_function'))
+# ------------------------ individual route end ------------------------
