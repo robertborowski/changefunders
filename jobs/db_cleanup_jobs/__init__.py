@@ -6,6 +6,26 @@ from website.backend.utils.sql_scripts import select_general_v1_jobs_function, s
 
 localhost_print_function(' ------------------------ __init__ db_cleanup_jobs start ------------------------')
 # ------------------------ individual function start ------------------------
+def job_list_all_redis_function():
+  localhost_print_function(' ------------------------ job_list_all_redis_function start ------------------------ ')
+  # ------------------------ loop through redis start ------------------------
+  # Connect to redis database pool (no need to close)
+  redis_connection = redis_connect_to_database_function()
+  redis_keys = redis_connection.keys()
+  counter_val = 0
+  for key in redis_keys:
+    if 'cfkey' in str(key):
+      counter_val += 1
+      value = redis_connection.get(key).decode('utf-8')
+      localhost_print_function(f'key: {key} | value: {value}')
+      # redis_connection.delete(key)
+  # ------------------------ loop through redis end ------------------------
+  localhost_print_function(f'total redis values: {counter_val}')
+  localhost_print_function(' ------------------------ job_list_all_redis_function start ------------------------ ')
+  return True
+# ------------------------ individual function end ------------------------
+
+# ------------------------ individual function start ------------------------
 def job_clean_out_redis_function(postgres_connection, postgres_cursor):
   localhost_print_function(' ------------------------ job_clean_out_redis_function start ------------------------ ')
   # ------------------------ get all current user id's as set start ------------------------
