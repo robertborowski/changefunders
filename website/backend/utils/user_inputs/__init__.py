@@ -78,4 +78,14 @@ def check_email_personal_tags_function(user_input_email):
   localhost_print_function(' ------------------------ check_email_personal_tags_function end ------------------------')
   return user_input_email
 # ------------------------ individual function end ------------------------
+
+# ------------------------ individual function start ------------------------
+def sanitize_password_function(user_input_password):
+  localhost_print_function('=========================================== sanitize_password_function START ===========================================')
+  if len(user_input_password) > 150 or len(user_input_password) < 4:
+    localhost_print_function('=========================================== sanitize_password_function END ===========================================')
+    return False
+  localhost_print_function('=========================================== sanitize_password_function END ===========================================')
+  return user_input_password
+# ------------------------ individual function end ------------------------
 localhost_print_function(' ------------------------ __init__ user_inputs end ------------------------')

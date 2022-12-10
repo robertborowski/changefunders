@@ -67,11 +67,13 @@ def create_app_function():
   # ------------------------ stripe api environment end ------------------------
   # ------------------------ views/auths/routes imports start ------------------------
   from .views import views
+  from .views_si import views_si
   from .auth import auth
   from .blog import blog
   # ------------------------ views/auths/routes imports end ------------------------
   # ------------------------ views/auths/routes register blueprints start ------------------------
   app.register_blueprint(views, url_prefix='/')
+  app.register_blueprint(views_si, url_prefix='/')
   app.register_blueprint(auth, url_prefix='/')
   app.register_blueprint(blog, url_prefix='/')
   # ------------------------ views/auths/routes register blueprints end ------------------------
@@ -90,7 +92,7 @@ def create_app_function():
     # ------------------------ list user dict directly from postgres start ------------------------
     logged_in_user_dict = UserObj.query.get(id).__dict__
     localhost_print_function(' -------010------- ')
-    localhost_print_function(logged_in_user_dict['first_name'])
+    localhost_print_function(logged_in_user_dict['email'])
     localhost_print_function(' -------010------- ')
     # ------------------------ list user dict directly from postgres end ------------------------
     localhost_print_function(' ------------------------ create_app_function end ------------------------')
