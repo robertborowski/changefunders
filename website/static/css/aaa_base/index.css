@@ -45,9 +45,9 @@
 }
 .custom-img-position-1 {
   position: absolute;
-  top: 70px;
-  left: 5%;
-  max-width: 50%;
+  top: 360px;
+  left: 50%; 
+  transform: translate(-50%, -50%);
 }
 .custom-img-position-2 {
   position: relative;
@@ -62,10 +62,6 @@
   position: absolute;
   max-width: 90%;
   z-index: 1;
-}
-.custom-img-size-1 {
-  height: auto;
-  width: auto;
 }
 /* ------------------------------------- images end ------------------------------------- */
 /* ------------------------------------- margins start ------------------------------------- */
@@ -101,6 +97,18 @@
   border-radius: 25px;
 }
 /* ------------------------------------- rounding end ------------------------------------- */
+/* ------------------------------------- size start ------------------------------------- */
+.custom-img-size-1 {
+  width: 600px;
+  max-width: 100%;
+}
+/* ------------------------------------- size end ------------------------------------- */
+/* ------------------------------------- text start ------------------------------------- */
+.custom-text-center-1 {
+  text-align: center;
+  align-items: center;
+}
+/* ------------------------------------- text end ------------------------------------- */
 /* ------------------------------------- width start ------------------------------------- */
 .custom-max-width-1 {
   max-width: 800px;
