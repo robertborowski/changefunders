@@ -16,18 +16,79 @@
 }
 /* ------------------------------------- backgrounds end ------------------------------------- */
 /* ------------------------------------- borders start ------------------------------------- */
-.border-black {border: 1px solid black;}
-.border-blue {border: 1px solid blue;}
-.border-red {border: 1px solid red;}
-.border-green {border: 1px solid green;}
-.border-purple {border: 1px solid purple;}
-.border-orange {border: 1px solid orange;}
+.custom-border-black {border: 1px solid black;}
+.custom-border-blue {border: 1px solid blue;}
+.custom-border-red {border: 1px solid red;}
+.custom-border-green {border: 1px solid green;}
+.custom-border-purple {border: 1px solid purple;}
+.custom-border-orange {border: 1px solid orange;}
 /* ------------------------------------- borders end ------------------------------------- */
+/* ------------------------------------- colors start ------------------------------------- */
+:root {
+  --custom-grey-1: rgb(120, 120, 120);
+}
+/* ------------------------------------- colors end ------------------------------------- */
 /* ------------------------------------- forms start ------------------------------------- */
 .form-custom-width-1 {
   max-width: 600px;
 }
 /* ------------------------------------- forms end ------------------------------------- */
+/* ------------------------------------- footer start ------------------------------------- */
+.custom-footer-background {
+  background-color: rgb(36, 36, 36);
+}
+.custom-footer-h1-1 {
+  color: rgb(185, 185, 185);
+}
+.custom-footer-all-links-1 {
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0 0 0;
+}
+.custom-footer-lower-1 {
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-between;
+  padding: 175px 0 10px 0;
+  color: var(--custom-grey-1);
+}
+.cutom-footer-ul-1 {
+  list-style: none;
+}
+.cutom-footer-li-1 {
+  padding: 10px 0;
+}
+.custom-footer-a-1, .custom-footer-a-1:visited {
+  color: var(--custom-grey-1);
+  text-decoration: none;
+}
+.custom-footer-a-1:hover {
+  color: var(--bs-primary);
+  text-decoration: underline;
+  transition: 0.5s;
+}
+.custom-shape-divider-top-1670803691 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1670803691 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 199px;
+}
+
+.custom-shape-divider-top-1670803691 .shape-fill {
+  fill: #FFFFFF;
+}
+/* ------------------------------------- footer end ------------------------------------- */
 /* ------------------------------------- height start ------------------------------------- */
 .custom-height-filler-1 {
   height: 300px;
