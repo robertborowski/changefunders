@@ -1,4 +1,14 @@
 @media (max-width: 1200px) {
+  /* ------------------------------------- footer start ------------------------------------- */
+  .custom-footer-all-links-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .custom-footer-lower-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* ------------------------------------- footer end ------------------------------------- */
   /* ------------------------------------- images start ------------------------------------- */
   .custom-img-position-1 {
     top: 150px;
