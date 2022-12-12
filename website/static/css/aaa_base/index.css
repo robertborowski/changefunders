@@ -158,6 +158,33 @@
   border-radius: 25px;
 }
 /* ------------------------------------- rounding end ------------------------------------- */
+/* ------------------------------------- shape divider start ------------------------------------- */
+.custom-shape-divider-bottom-1670805312 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1670805312 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 329px;
+}
+.custom-shape-divider-bottom-1670805312 .shape-fill {
+  fill: #FFFFFF;
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1670805312 svg {
+      width: calc(300% + 1.3px);
+      height: 150px;
+  }
+}
+/* ------------------------------------- shape divider end ------------------------------------- */
 /* ------------------------------------- size start ------------------------------------- */
 .custom-img-size-1 {
   width: 600px;
