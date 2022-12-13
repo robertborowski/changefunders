@@ -1,18 +1,21 @@
 /* ------------------------------------- backgrounds start ------------------------------------- */
-.bg-custom-yellow-1 {
+.custom-bg-yellow-1 {
   background-color: #fef2da;
 }
-.bg-custom-colorful-1 {
+.custom-bg-colorful-1 {
   background: linear-gradient(145deg, rgb(255 224 224)0%, rgb(255 254 221)25%, rgb(240 255 238)50%, rgb(233 209 255)100%);
 }
-.bg-custom-grey-1 {
+.custom-bg-grey-1 {
   background-color: rgb(250, 250, 250);
 }
-.bg-custom-white {
+.custom-bg-white {
   background-color: rgb(255, 255, 255);
 }
-.bg-custom-black {
+.custom-bg-black {
   background-color: rgb(0, 0, 0);
+}
+.custom-bg-red-1 {
+  background-color: rgb(254 219 219);
 }
 /* ------------------------------------- backgrounds end ------------------------------------- */
 /* ------------------------------------- borders start ------------------------------------- */
@@ -22,6 +25,9 @@
 .custom-border-green {border: 1px solid green;}
 .custom-border-purple {border: 1px solid purple;}
 .custom-border-orange {border: 1px solid orange;}
+.custom-border-radius-1 {
+  border-radius: 50px;
+}
 /* ------------------------------------- borders end ------------------------------------- */
 /* ------------------------------------- colors start ------------------------------------- */
 :root {
@@ -33,6 +39,11 @@
   max-width: 600px;
 }
 /* ------------------------------------- forms end ------------------------------------- */
+/* ------------------------------------- font start ------------------------------------- */
+.custom-font-grey-1 {
+  color: var(--custom-grey-1);
+}
+/* ------------------------------------- font end ------------------------------------- */
 /* ------------------------------------- footer start ------------------------------------- */
 .custom-footer-background {
   background-color: rgb(36, 36, 36);
@@ -79,14 +90,12 @@
   line-height: 0;
   transform: rotate(180deg);
 }
-
 .custom-shape-divider-top-1670803691 svg {
   position: relative;
   display: block;
   width: calc(300% + 1.3px);
   height: 199px;
 }
-
 .custom-shape-divider-top-1670803691 .shape-fill {
   fill: #FFFFFF;
 }
@@ -99,6 +108,14 @@
   margin: 0 5px;
 }
 /* ------------------------------------- footer end ------------------------------------- */
+/* ------------------------------------- header/subheader start ------------------------------------- */
+.custom-header-1 {
+  font-size: 50px;
+}
+.custom-subheader-1 {
+  font-size: 20px;
+}
+/* ------------------------------------- header/subheader end ------------------------------------- */
 /* ------------------------------------- height start ------------------------------------- */
 .custom-height-filler-1 {
   height: 300px;
@@ -134,6 +151,14 @@
   max-width: 90%;
   z-index: 1;
 }
+.custom-img-size-1 {
+  width: 600px;
+  max-width: 100%;
+}
+.custom-img-size-2 {
+  width: 500px;
+  max-width: 95%;
+}
 /* ------------------------------------- images end ------------------------------------- */
 /* ------------------------------------- margins start ------------------------------------- */
 .custom-mx-1 {
@@ -141,6 +166,9 @@
 }
 .custom-mt-1 {
   margin: 50px 0 0 0;
+}
+.custom-my-1 {
+  margin: 25px 0;
 }
 /* ------------------------------------- margins end ------------------------------------- */
 /* ------------------------------------- navbar start ------------------------------------- */
@@ -162,6 +190,9 @@
 .custom-pt-1 {
   padding: 100px 0 0 0;
 }
+.custom-py-1 {
+  margin: 50px 0;
+}
 /* ------------------------------------- padding end ------------------------------------- */
 /* ------------------------------------- rounding start ------------------------------------- */
 .custom-border-radius-1 {
@@ -169,7 +200,7 @@
 }
 /* ------------------------------------- rounding end ------------------------------------- */
 /* ------------------------------------- shape divider start ------------------------------------- */
-.custom-shape-divider-bottom-1670805312 {
+.custom-shape-divider-bottom-1670898795 {
   position: relative;
   bottom: 0;
   left: 0;
@@ -178,33 +209,69 @@
   line-height: 0;
   transform: rotate(180deg);
 }
-.custom-shape-divider-bottom-1670805312 svg {
+.custom-shape-divider-bottom-1670898795 svg {
+  position: relative;
+  display: block;
+  width: calc(159% + 1.3px);
+  height: 219px;
+}
+.custom-shape-divider-bottom-1670898795 .shape-fill {
+  /* fill: #FFFFFF; */
+  fill: rgb(254 219 219);
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1670898795 svg {
+      width: calc(150% + 1.3px);
+      height: 100px;
+  }
+}
+
+.custom-shape-divider-bottom-1670899178 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* overflow: hidden; */
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1670899178 svg {
   position: relative;
   display: block;
   width: calc(300% + 1.3px);
-  height: 329px;
+  height: 250px;
 }
-.custom-shape-divider-bottom-1670805312 .shape-fill {
+.custom-shape-divider-bottom-1670899178 .shape-fill {
   fill: #FFFFFF;
 }
 /** For mobile devices **/
 @media (max-width: 767px) {
-  .custom-shape-divider-bottom-1670805312 svg {
+  .custom-shape-divider-bottom-1670899178 svg {
       width: calc(300% + 1.3px);
       height: 150px;
   }
 }
 /* ------------------------------------- shape divider end ------------------------------------- */
-/* ------------------------------------- size start ------------------------------------- */
-.custom-img-size-1 {
-  width: 600px;
-  max-width: 100%;
-}
-/* ------------------------------------- size end ------------------------------------- */
 /* ------------------------------------- text start ------------------------------------- */
 .custom-text-center-1 {
   text-align: center;
   align-items: center;
+}
+.custom-text-decoration-1 {
+  /* border: 1px solid black; */
+  width: 600px;
+  max-width: 95%;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 50px;
+  background-color: #fef2da;
+}
+.custom-text-decoration-2 {
+  /* border: 1px solid black; */
+  width: 600px;
+  max-width: 95%;
+  margin: 50px auto;
 }
 /* ------------------------------------- text end ------------------------------------- */
 /* ------------------------------------- width start ------------------------------------- */
