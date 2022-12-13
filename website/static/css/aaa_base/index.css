@@ -17,6 +17,9 @@
 .custom-bg-red-1 {
   background-color: rgb(254 219 219);
 }
+.custom-bg-green-1 {
+  background-color: rgb(219, 254, 220);
+}
 /* ------------------------------------- backgrounds end ------------------------------------- */
 /* ------------------------------------- borders start ------------------------------------- */
 .custom-border-black {border: 1px solid black;}
@@ -157,7 +160,7 @@
 }
 .custom-img-size-2 {
   width: 500px;
-  max-width: 95%;
+  max-width: 100%;
 }
 /* ------------------------------------- images end ------------------------------------- */
 /* ------------------------------------- margins start ------------------------------------- */
@@ -243,13 +246,40 @@
   height: 250px;
 }
 .custom-shape-divider-bottom-1670899178 .shape-fill {
-  fill: #FFFFFF;
+  /* fill: #FFFFFF; */
+  fill: rgb(219, 254, 220);
 }
 /** For mobile devices **/
 @media (max-width: 767px) {
   .custom-shape-divider-bottom-1670899178 svg {
       width: calc(300% + 1.3px);
       height: 150px;
+  }
+}
+
+.custom-shape-divider-bottom-1670932652 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1670932652 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 99px;
+}
+.custom-shape-divider-bottom-1670932652 .shape-fill {
+  fill: #FFFFFF;
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1670932652 svg {
+      width: calc(150% + 1.3px);
+      height: 99px;
   }
 }
 /* ------------------------------------- shape divider end ------------------------------------- */
