@@ -188,6 +188,9 @@
 .custom-m-1 {
   margin: 25px;
 }
+.custom-m-2 {
+  margin: 5px;
+}
 .custom-mx-1 {
   margin: 0 200px;
 }
@@ -221,7 +224,7 @@
   padding: 100px 0 0 0;
 }
 .custom-pt-2 {
-  padding: 50px 0 0 0;
+  padding: 125px 0 0 0;
 }
 .custom-pt-3 {
   padding: 25px 0 0 0;

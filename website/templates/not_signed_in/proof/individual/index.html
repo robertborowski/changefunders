@@ -1,0 +1,24 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Sign Up - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid pt-5 custom-bg-yellow-1">
+  <div class="container">
+    <p>Hello, proof individual page</p>
+    <!-- ------------------------------------- temporary logic start ------------------------------------- -->
+    <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+      <p>1. Proof of donation badge.</p>
+      <img src="{{ img_url_to_html }}" class="img-thumbnail rounded-circle mx-auto d-block shadow-lg" alt="donator proof">
+    </div>
+    <!-- ------------------------------------- temporary logic end ------------------------------------- -->
+  </div>
+</div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->

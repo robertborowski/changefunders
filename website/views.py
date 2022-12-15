@@ -28,8 +28,6 @@ views = Blueprint('views', __name__)
 @views.route('/')
 def landing_index_page_function():
   localhost_print_function(' ------------------------ landing_index_page_function start ------------------------')
-  # if request.method == 'POST':
-  #   ui_email = request.form.get('uiEmailVariousPages1')
   localhost_print_function(' ------------------------ landing_index_page_function end ------------------------')
   return render_template('not_signed_in/landing/index.html', user=current_user)
 # ------------------------ individual route end ------------------------
@@ -106,5 +104,48 @@ def candidates_reset_forgot_password_page_function(token):
       return redirect(url_for('views_si.dashboard_page_function'))
     # ------------------------ update db end ------------------------
   localhost_print_function(' ------------------------ candidates_reset_forgot_password_page_function end ------------------------')
-  return render_template('not_signed_in/password_reset/index.html', user=current_user, error_message_to_html = reset_password_error_statement)
+  return render_template('not_signed_in/password_reset/index.html', user=current_user, error_message_to_html=reset_password_error_statement)
+# ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/proof')
+def proof_page_function():
+  localhost_print_function(' ------------------------ proof_page_function start ------------------------')
+  proof_error_statement=''
+  # ------------------------ redirect messages start ------------------------
+  var1 = request.args.get('var1')
+  if var1 == 'Username does not exist.':
+    proof_error_statement = var1
+  # ------------------------ redirect messages end ------------------------
+  localhost_print_function(' ------------------------ proof_page_function end ------------------------')
+  return render_template('not_signed_in/proof/index.html', user=current_user, error_message_to_html=proof_error_statement)
+# ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/proof/<search_username>', methods=['GET', 'POST'])
+def i_proof_page_function(search_username):
+  localhost_print_function(' ------------------------ i_proof_page_function start ------------------------')
+  proof_error_statement = ''
+  # ------------------------ check if user exists start ------------------------
+  search_username = search_username.upper()
+  user_exists = UserObj.query.filter_by(username=search_username).first()
+  if user_exists:
+    username = user_exists.username
+    # ------------------------ temporary logic start ------------------------
+    if username == 'ABC101':
+      img_url = '/static/images/cards/changefunders_card1.png'
+    elif username == 'ABC123':
+      img_url = '/static/images/cards/changefunders_card2.png'
+    elif username == 'ABC107':
+      img_url = '/static/images/cards/changefunders_card3.png'
+    else:
+      img_url=''
+    pass
+    # ------------------------ temporary logic end ------------------------
+  else:
+    proof_error_statement = 'Username does not exist.'
+    return redirect(url_for('views.proof_page_function', var1=proof_error_statement))
+  # ------------------------ check if user exists end ------------------------
+  localhost_print_function(' ------------------------ i_proof_page_function end ------------------------')
+  return render_template('not_signed_in/proof/individual/index.html', user=current_user, img_url_to_html=img_url)
 # ------------------------ individual route end ------------------------

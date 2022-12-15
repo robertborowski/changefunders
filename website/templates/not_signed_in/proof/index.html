@@ -1,0 +1,19 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Sign Up - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid pt-5 custom-bg-yellow-1">
+  <div class="container">
+    <p>{{ error_message_to_html }}</p>
+    <p>Hello, proof page</p>
+  </div>
+</div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->
