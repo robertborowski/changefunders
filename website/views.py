@@ -17,6 +17,7 @@ from website.models import UserObj
 from website import db
 from website.backend.utils.send_emails import send_email_template_function
 from werkzeug.security import generate_password_hash
+from website.backend.utils.datetime import current_year_month_function
 # ------------------------ imports end ------------------------
 
 
@@ -132,6 +133,7 @@ def i_proof_page_function(search_username):
   if user_exists:
     username = user_exists.username
     # ------------------------ temporary logic start ------------------------
+    # This is temporary and should instead point to AWS s3 public bucket of the user's profile picture url location
     if username == 'ABC101':
       img_url = '/static/images/cards/changefunders_card1.png'
     elif username == 'ABC123':
@@ -142,10 +144,11 @@ def i_proof_page_function(search_username):
       img_url=''
     pass
     # ------------------------ temporary logic end ------------------------
+    current_date_str = current_year_month_function()
   else:
     proof_error_statement = 'Username does not exist.'
     return redirect(url_for('views.proof_page_function', var1=proof_error_statement))
   # ------------------------ check if user exists end ------------------------
   localhost_print_function(' ------------------------ i_proof_page_function end ------------------------')
-  return render_template('not_signed_in/proof/individual/index.html', user=current_user, img_url_to_html=img_url)
+  return render_template('not_signed_in/proof/individual/index.html', user=current_user, img_url_to_html=img_url, current_date_str_to_html=current_date_str)
 # ------------------------ individual route end ------------------------
