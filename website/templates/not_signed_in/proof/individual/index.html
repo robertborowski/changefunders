@@ -18,9 +18,9 @@
         <p class="custom-p-1">Amount: <span class="custom-tag-1 custom-tag-blue-1"><i class="fa-solid fa-lock custom-icon-1"></i>private</span></p>
         <p class="custom-p-1">Organization: <span class="custom-tag-1 custom-tag-blue-1"><i class="fa-solid fa-lock custom-icon-1"></i>private</span></p>
       </div>
-      <img src="{{ img_url_to_html }}" class="img-thumbnail rounded-circle mx-auto d-block shadow-lg" alt="donator proof">
+      <a href="/signup"><img src="{{ img_url_to_html }}" class="img-thumbnail rounded-circle mx-auto d-block shadow-lg" alt="donator proof"></a>
       <div class="container custom-pb-1">
-        <h1 class="custom-header-2 custom-pt-3">Congrats &#127881;! You are leading the <span class="text-decoration-underline">change</span> you want to see in the world &#127758;!</h1>
+        <h1 class="custom-header-2 custom-pt-3">Congrats @<a href="/signup" class="text-decoration-underline custom-username-highlight-1">{{ username_to_html }}</a> &#127881;! You are leading the <span class="text-decoration-underline">change</span> you want to see in the world &#127758;!</h1>
       </div>
     </div>
     <!-- ------------------------------------- temporary logic end ------------------------------------- -->
@@ -39,7 +39,7 @@
   <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
     <div class="mb-3">
       <label for="uiEmailVariousPages1" class="form-label">Email</label>
-      <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}">
+      <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary">Get started</button>

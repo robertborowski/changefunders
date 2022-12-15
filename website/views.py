@@ -18,12 +18,17 @@ from website import db
 from website.backend.utils.send_emails import send_email_template_function
 from werkzeug.security import generate_password_hash
 from website.backend.utils.datetime import current_year_month_function
+from website.backend.redis import redis_connect_to_database_function, redis_check_if_referral_cookie_exists_function
+from website.backend.utils.browser import browser_response_set_referral_cookie_function
 # ------------------------ imports end ------------------------
 
 
 # ------------------------ function start ------------------------
 views = Blueprint('views', __name__)
 # ------------------------ function end ------------------------
+# ------------------------ connect to redis start ------------------------
+redis_connection = redis_connect_to_database_function()
+# ------------------------ connect to redis end ------------------------
 
 # ------------------------ individual route start ------------------------
 @views.route('/')
@@ -130,7 +135,7 @@ def i_proof_page_function(search_username):
   # ------------------------ check if user exists start ------------------------
   user_exists = UserObj.query.filter_by(username_db=search_username.lower()).first()
   if user_exists:
-    username = user_exists.username
+    username = user_exists.username_db
     # ------------------------ temporary logic start ------------------------
     # This is temporary and should instead point to AWS s3 public bucket of the user's profile picture url location
     if username == 'ashley':
@@ -149,5 +154,17 @@ def i_proof_page_function(search_username):
     return redirect(url_for('views.proof_page_function', var1=proof_error_statement))
   # ------------------------ check if user exists end ------------------------
   localhost_print_function(' ------------------------ i_proof_page_function end ------------------------')
-  return render_template('not_signed_in/proof/individual/index.html', user=current_user, img_url_to_html=img_url, current_date_str_to_html=current_date_str)
+  # return render_template('not_signed_in/proof/individual/index.html', user=current_user, img_url_to_html=img_url, current_date_str_to_html=current_date_str, username_to_html=username)
+  template_location_url = 'not_signed_in/proof/individual/index.html'
+  # ------------------------ auto set cookie start ------------------------
+  get_referral_cookie_value_from_browser = redis_check_if_referral_cookie_exists_function()
+  if get_referral_cookie_value_from_browser != None:
+    redis_connection.set(get_referral_cookie_value_from_browser, username.encode('utf-8'))
+    localhost_print_function(' ------------------------ i_proof_page_function end ------------------------')
+    return render_template(template_location_url, user=current_user, img_url_to_html=img_url, current_date_str_to_html=current_date_str, username_to_html=username)
+  else:
+    browser_response = browser_response_set_referral_cookie_function(current_user, template_location_url, img_url, current_date_str, username)
+    localhost_print_function(' ------------------------ i_proof_page_function end ------------------------')
+    return browser_response
+  # ------------------------ auto set cookie end ------------------------
 # ------------------------ individual route end ------------------------

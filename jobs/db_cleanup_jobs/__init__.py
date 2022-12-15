@@ -14,7 +14,7 @@ def job_list_all_redis_function():
   redis_keys = redis_connection.keys()
   counter_val = 0
   for key in redis_keys:
-    if 'cfkey' in str(key):
+    if 'cfkey' in str(key) or 'cfref' in str(key):
       counter_val += 1
       value = redis_connection.get(key).decode('utf-8')
       localhost_print_function(f'key: {key} | value: {value}')
@@ -43,7 +43,7 @@ def job_clean_out_redis_function(postgres_connection, postgres_cursor):
   redis_keys = redis_connection.keys()
   redis_candidates_deleted_counter = 0
   for key in redis_keys:
-    if 'cfkey' in str(key):
+    if 'cfkey' in str(key) or 'cfref' in str(key):
       value = redis_connection.get(key).decode('utf-8')
       print(f'key: {key} | value: {value}')
       if value not in user_ids_set:

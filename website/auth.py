@@ -14,11 +14,11 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_user, login_required, logout_user, current_user
 from website import db
 from .models import UserObj, CollectEmailObj
-from website.backend.utils.user_inputs import sanitize_email_function, sanitize_password_function, sanitize_username_function
+from website.backend.utils.user_inputs import sanitize_email_function, sanitize_password_function, sanitize_username_function, sanitize_username_referred_by_function
 from website.backend.utils.uuid_and_timestamp import create_uuid_function, create_timestamp_function, generate_username_uuid_function
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
-from website.backend.redis import redis_connect_to_database_function, redis_check_if_cookie_exists_function
+from website.backend.redis import redis_connect_to_database_function, redis_check_if_cookie_exists_function, redis_check_if_referral_cookie_exists_function
 # ------------------------ imports end ------------------------
 
 
@@ -41,6 +41,15 @@ def signup_function():
     randomly_generated_username = generate_username_uuid_function(6)
     username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
   # ------------------------ generate unique username end ------------------------
+  # ------------------------ auto referral by cookie start ------------------------
+  referred_by_username_redis = ''
+  get_referral_cookie_value_from_browser = redis_check_if_referral_cookie_exists_function()
+  if get_referral_cookie_value_from_browser != None:
+    try:
+      referred_by_username_redis = redis_connection.get(get_referral_cookie_value_from_browser).decode('utf-8')
+    except:
+      referred_by_username_redis = ''
+  # ------------------------ auto referral by cookie end ------------------------
   if request.method == 'POST':
     # ------------------------ post method hit #1 - various pages start ------------------------
     ui_email = request.form.get('uiEmailVariousPages1')
@@ -68,11 +77,13 @@ def signup_function():
       return render_template('not_signed_in/sign_up/index.html',
                               user=current_user,
                               error_message_to_html=sign_up_error_message,
-                              redirect_var_email=ui_email)
+                              redirect_var_email=ui_email,
+                              redirect_var_referred_by=referred_by_username_redis.lower())
     # ------------------------ post method hit #1 - various pages end ------------------------
     # ------------------------ post method hit #2 - sign up page only start ------------------------
     ui_email = request.form.get('uiEmail')
     ui_username = request.form.get('uiUsername')
+    ui_username_referred_by = request.form.get('uiUsernameReferredBy')
     ui_password = request.form.get('uiPassword')
     # ------------------------ sanitize/check user inputs start ------------------------
     # ------------------------ sanitize/check user input email start ------------------------
@@ -84,6 +95,11 @@ def signup_function():
     ui_username_cleaned = sanitize_username_function(ui_username)
     if ui_username_cleaned == False:
       sign_up_error_message = 'Please enter a valid username.'
+    # ------------------------ sanitize/check user input email end ------------------------
+    # ------------------------ sanitize/check user input email start ------------------------
+    ui_username_referred_by_cleaned = sanitize_username_referred_by_function(ui_username_referred_by)
+    if ui_username_referred_by_cleaned == False:
+      sign_up_error_message = 'The referred by username is not valid.'
     # ------------------------ sanitize/check user input email end ------------------------
     # ------------------------ sanitize/check user input password start ------------------------
     ui_password_cleaned = sanitize_password_function(ui_password)
@@ -99,6 +115,7 @@ def signup_function():
                               error_message_to_html=sign_up_error_message,
                               redirect_var_email=ui_email,
                               redirect_var_username=ui_username,
+                              redirect_var_referred_by=ui_username_referred_by,
                               redirect_var_password=ui_password)
     # ------------------------ if user input error end ------------------------
     # ------------------------ check if user email already exists in db start ------------------------
@@ -111,6 +128,7 @@ def signup_function():
                               error_message_to_html=sign_up_error_message,
                               redirect_var_email=ui_email,
                               redirect_var_username=ui_username,
+                              redirect_var_referred_by=ui_username_referred_by,
                               redirect_var_password=ui_password)
     # ------------------------ check if user email already exists in db start ------------------------
     else:
@@ -124,6 +142,7 @@ def signup_function():
                                 error_message_to_html=sign_up_error_message,
                                 redirect_var_email=ui_email,
                                 redirect_var_username=ui_username,
+                                redirect_var_referred_by=ui_username_referred_by,
                                 redirect_var_password=ui_password)
       # ------------------------ check if username exists end ------------------------
       # ------------------------ create new user in db start ------------------------
@@ -136,6 +155,7 @@ def signup_function():
         name=None,
         username=ui_username,
         username_db=ui_username.lower(),
+        referred_by_username_db=ui_username_referred_by.lower(),
         fk_stripe_customer_id=None,
         fk_stripe_subscription_id=None
       )
@@ -161,7 +181,7 @@ def signup_function():
     # ------------------------ post method hit #2 - sign up page only end ------------------------
 
   localhost_print_function(' ------------------------ signup_function end ------------------------ ')
-  return render_template('not_signed_in/sign_up/index.html',user=current_user,error_message_to_html=sign_up_error_message, redirect_var_username=randomly_generated_username)
+  return render_template('not_signed_in/sign_up/index.html',user=current_user,error_message_to_html=sign_up_error_message, redirect_var_username=randomly_generated_username, redirect_var_referred_by=referred_by_username_redis)
 # ------------------------ individual route end ------------------------
 
 # ------------------------ individual route start ------------------------

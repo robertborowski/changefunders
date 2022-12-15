@@ -18,14 +18,19 @@
       <label for="uiEmail" class="form-label">Email</label>
       <input type="email" class="form-control" placeholder="Email" id="uiEmail" name="uiEmail" value="{{ redirect_var_email }}">
     </div>
+    <div class="mb-4">
+      <label for="uiPassword" class="form-label">Password</label>
+      <input type="password" class="form-control" placeholder="Password" id="uiPassword" name="uiPassword" value="{{ redirect_var_password }}">
+    </div>
     <label for="uiUsername" class="d-inline-block">Username</label>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">@</span>
       <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="uiUsername" name="uiUsername" value="{{ redirect_var_username }}" aria-describedby="basic-addon1">
     </div>
-    <div class="mb-4">
-      <label for="uiPassword" class="form-label">Password</label>
-      <input type="password" class="form-control" placeholder="Password" id="uiPassword" name="uiPassword" value="{{ redirect_var_password }}">
+    <label for="uiUsernameReferredBy" class="d-inline-block">Referred by (optional)</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="(Optional)" aria-label="Referred by username" id="uiUsernameReferredBy" name="uiUsernameReferredBy" value="{{ redirect_var_referred_by }}" aria-describedby="basic-addon1">
     </div>
     <div class="text-center">
       <button type="submit" class="btn btn-primary">Create account</button>

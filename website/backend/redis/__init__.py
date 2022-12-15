@@ -56,4 +56,24 @@ def redis_set_browser_cookie_function():
   localhost_print_function(' ------------------------ redis_set_browser_cookie_function END ------------------------ ')
   return set_browser_cookie_key, set_browser_cookie_value
 # ------------------------ individual function start ------------------------
+
+# ------------------------ individual function start ------------------------
+def redis_check_if_referral_cookie_exists_function():
+  localhost_print_function(' ------------------------ redis_check_if_referral_cookie_exists_function START ------------------------ ')
+  try:
+    get_referral_cookie_value_from_browser = request.cookies.get('cf_referral_cookie')
+  except:
+    get_referral_cookie_value_from_browser = None
+  localhost_print_function(' ------------------------ redis_check_if_referral_cookie_exists_function END ------------------------ ')
+  return get_referral_cookie_value_from_browser
+# ------------------------ individual function start ------------------------
+
+# ------------------------ individual function start ------------------------
+def redis_set_referral_browser_cookie_function():
+  localhost_print_function(' ------------------------ redis_set_referral_browser_cookie_function START ------------------------ ')
+  set_browser_cookie_key = 'cf_referral_cookie'
+  set_browser_cookie_value = create_uuid_function('cfref_')
+  localhost_print_function(' ------------------------ redis_set_referral_browser_cookie_function END ------------------------ ')
+  return set_browser_cookie_key, set_browser_cookie_value
+# ------------------------ individual function start ------------------------
 localhost_print_function(' ------------------------ __init__ redis end ------------------------')
