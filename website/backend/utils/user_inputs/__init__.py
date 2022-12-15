@@ -80,6 +80,25 @@ def check_email_personal_tags_function(user_input_email):
 # ------------------------ individual function end ------------------------
 
 # ------------------------ individual function start ------------------------
+def sanitize_username_function(user_input_username):
+  localhost_print_function('=========================================== sanitize_username_function START ===========================================')
+  user_input_username = user_input_username.rstrip()
+  if re.match(r'^[a-zA-Z0-9][ A-Za-z0-9_-]*$', user_input_username):
+    if len(user_input_username) > 15 or len(user_input_username) < 1:
+      # ------------------------ fails 2 character count start ------------------------
+      localhost_print_function('=========================================== sanitize_username_function END ===========================================')
+      return False
+      # ------------------------ fails 2 character count end ------------------------
+  # ------------------------ fails 1 regex start ------------------------
+  else:
+    localhost_print_function('=========================================== sanitize_username_function END ===========================================')
+    return False
+  # ------------------------ fails 1 regex end ------------------------
+  localhost_print_function('=========================================== sanitize_username_function END ===========================================')
+  return user_input_username
+# ------------------------ individual function end ------------------------
+
+# ------------------------ individual function start ------------------------
 def sanitize_password_function(user_input_password):
   localhost_print_function('=========================================== sanitize_password_function START ===========================================')
   if len(user_input_password) > 150 or len(user_input_password) < 4:
