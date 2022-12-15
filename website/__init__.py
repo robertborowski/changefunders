@@ -25,6 +25,30 @@ DB_NAME = os.environ.get('DATABASE_URL')
 
 secret_key_ref = os.urandom(64)
 
+# ------------------------ create_db_function start ------------------------
+def create_database_function(app):
+  """
+  -Note: How to log everyone off. Remove all browser cookie keys from redis, THEN,
+  you have to restart the app from heroku. restarting the main/index .py file will 
+  log everyone off from flask login manager.
+  """
+  localhost_print_function('=========================================== create_database_function START ===========================================')
+  if not path.exists('website/' + DB_NAME):
+    # ------------------------ old - editing model tables start ------------------------
+    # db.create_all(app=app)
+    # ------------------------ old - editing model tables end ------------------------
+    # ------------------------ new - editing model tables start ------------------------
+    # https://stackoverflow.com/questions/34122949/working-outside-of-application-context-flask
+    with app.app_context():
+      db.create_all()
+    # ------------------------ new - editing model tables end ------------------------
+    print('Created database!')
+  else:
+    print('Database already exists!')
+    pass
+  localhost_print_function('=========================================== create_database_function END ===========================================')
+# ------------------------ create_db_function end ------------------------
+
 
 # ------------------------ __init__ function start ------------------------
 def create_app_function():
@@ -104,22 +128,4 @@ def create_app_function():
   localhost_print_function(' ------------------------ create_app_function end ------------------------')
   return app
 # ------------------------ __init__ function end ------------------------
-
-
-# ------------------------ create_db_function start ------------------------
-def create_database_function(app):
-  """
-  -Note: How to log everyone off. Remove all browser cookie keys from redis, THEN,
-  you have to restart the app from heroku. restarting the main/index .py file will 
-  log everyone off from flask login manager.
-  """
-  localhost_print_function('=========================================== create_database_function START ===========================================')
-  if not path.exists('website/' + DB_NAME):
-    # db.create_all(app=app)
-    print('Created database!')
-  else:
-    print('Database already exists!')
-    pass
-  localhost_print_function('=========================================== create_database_function END ===========================================')
-# ------------------------ create_db_function end ------------------------
 localhost_print_function(' ------------------------ __init__ website end ------------------------')
