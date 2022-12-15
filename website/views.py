@@ -28,6 +28,8 @@ views = Blueprint('views', __name__)
 @views.route('/')
 def landing_index_page_function():
   localhost_print_function(' ------------------------ landing_index_page_function start ------------------------')
+  # if request.method == 'POST':
+  #   ui_email = request.form.get('uiEmailVariousPages1')
   localhost_print_function(' ------------------------ landing_index_page_function end ------------------------')
   return render_template('not_signed_in/landing/index.html', user=current_user)
 # ------------------------ individual route end ------------------------

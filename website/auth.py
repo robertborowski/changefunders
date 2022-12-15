@@ -58,7 +58,10 @@ def signup_function():
       # ------------------------ create new signup in db end ------------------------
       localhost_print_function('user is being redirected to full sign up page')
       localhost_print_function(' ------------------------ signup_function end ------------------------ ')
-      return render_template('candidates_page_templates/not_logged_in_page_templates/create_account_templates/index.html', user=current_user, redirect_var_email = ui_email, error_message_to_html = sign_up_error_message)
+      return render_template('not_signed_in/sign_up/index.html',
+                              user=current_user,
+                              error_message_to_html=sign_up_error_message,
+                              redirect_var_email=ui_email)
     # ------------------------ post method hit #1 - various pages end ------------------------
     # ------------------------ post method hit #2 - sign up page only start ------------------------
     ui_email = request.form.get('uiEmail')

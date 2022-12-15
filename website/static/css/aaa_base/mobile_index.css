@@ -13,5 +13,11 @@
   .custom-img-position-1 {
     top: 150px;
   }
+  .custom-org-logo-wide-1 {
+    max-width: 150px;
+  }
+  .custom-m-1 {
+    margin: 10px;
+  }
   /* ------------------------------------- images end ------------------------------------- */
 }
