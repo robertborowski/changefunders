@@ -124,6 +124,9 @@
 .custom-subheader-2 {
   font-size: 12px;
 }
+.custom-subheader-3 {
+  font-size: 10px;
+}
 /* ------------------------------------- header/subheader end ------------------------------------- */
 /* ------------------------------------- height start ------------------------------------- */
 .custom-height-filler-1 {
@@ -172,6 +175,9 @@
   max-width: 200px;
   max-height: 100px;
 }
+.custom-stripe-img-1 {
+  max-width: 150px;
+}
 /* ------------------------------------- images end ------------------------------------- */
 /* ------------------------------------- index start ------------------------------------- */
 .custom-index-2 {
@@ -187,6 +193,9 @@
 }
 .custom-mt-1 {
   margin: 50px 0 0 0;
+}
+.custom-mt-2 {
+  margin: 25px 0 0 0;
 }
 .custom-my-1 {
   margin: 25px 0;
@@ -214,14 +223,20 @@
 .custom-pt-2 {
   padding: 50px 0 0 0;
 }
+.custom-pt-3 {
+  padding: 25px 0 0 0;
+}
 .custom-bt-2 {
   padding: 0 0 25px 0;
 }
 .custom-py-1 {
   padding: 50px 0 25px 0;
 }
-.custom-py-3 {
+.custom-py-2 {
   padding: 100px 0 25px 0;
+}
+.custom-py-3 {
+  padding: 100px 0 0px 0;
 }
 /* ------------------------------------- padding end ------------------------------------- */
 /* ------------------------------------- position start ------------------------------------- */
@@ -312,6 +327,32 @@
   .custom-shape-divider-bottom-1670932652 svg {
       width: calc(150% + 1.3px);
       height: 99px;
+  }
+}
+
+.custom-shape-divider-bottom-1671106341 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.custom-shape-divider-bottom-1671106341 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 182px;
+}
+.custom-shape-divider-bottom-1671106341 .shape-fill {
+  /* fill: #FFFFFF; */
+  fill: #fef2da;
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1671106341 svg {
+      width: calc(100% + 1.3px);
+      height: 150px;
   }
 }
 /* ------------------------------------- shape divider end ------------------------------------- */
