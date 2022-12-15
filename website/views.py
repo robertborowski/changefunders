@@ -128,18 +128,17 @@ def i_proof_page_function(search_username):
   localhost_print_function(' ------------------------ i_proof_page_function start ------------------------')
   proof_error_statement = ''
   # ------------------------ check if user exists start ------------------------
-  search_username = search_username.upper()
-  user_exists = UserObj.query.filter_by(username=search_username).first()
+  user_exists = UserObj.query.filter_by(username_db=search_username.lower()).first()
   if user_exists:
     username = user_exists.username
     # ------------------------ temporary logic start ------------------------
     # This is temporary and should instead point to AWS s3 public bucket of the user's profile picture url location
-    if username == 'ABC101':
-      img_url = '/static/images/cards/changefunders_card1.png'
-    elif username == 'ABC123':
-      img_url = '/static/images/cards/changefunders_card2.png'
-    elif username == 'ABC107':
-      img_url = '/static/images/cards/changefunders_card3.png'
+    if username == 'ashley':
+      img_url = '/static/images/proof/proof_ashley.png'
+    elif username == 'sara':
+      img_url = '/static/images/proof/proof_sara.png'
+    elif username == 'olivia':
+      img_url = '/static/images/proof/proof_olivia.png'
     else:
       img_url=''
     pass

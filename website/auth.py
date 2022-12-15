@@ -34,6 +34,13 @@ redis_connection = redis_connect_to_database_function()
 def signup_function():
   localhost_print_function(' ------------------------ signup_function start ------------------------ ')
   sign_up_error_message = ''
+  # ------------------------ generate unique username start ------------------------
+  randomly_generated_username = generate_username_uuid_function(6)
+  username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
+  while username_exists != None:
+    randomly_generated_username = generate_username_uuid_function(6)
+    username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
+  # ------------------------ generate unique username end ------------------------
   if request.method == 'POST':
     # ------------------------ post method hit #1 - various pages start ------------------------
     ui_email = request.form.get('uiEmailVariousPages1')
@@ -107,16 +114,9 @@ def signup_function():
                               redirect_var_password=ui_password)
     # ------------------------ check if user email already exists in db start ------------------------
     else:
-      # ------------------------ generate unique username start ------------------------
-      # randomly_generated_username = generate_username_uuid_function(6)
-      # username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
-      # while username_exists != None:
-        # randomly_generated_username = generate_username_uuid_function(6)
-        # username_exists = UserObj.query.filter_by(username=randomly_generated_username).first()
-      # ------------------------ generate unique username end ------------------------
       # ------------------------ check if username exists start ------------------------
-      username_exists = UserObj.query.filter_by(username=ui_username).first()
-      if username_exists:
+      username_db_exists = UserObj.query.filter_by(username_db=ui_username.lower()).first()
+      if username_db_exists:
         sign_up_error_message = 'Username not available.'
         localhost_print_function(' ------------------------ signup_function end ------------------------ ')
         return render_template('not_signed_in/sign_up/index.html',
@@ -135,6 +135,7 @@ def signup_function():
         password=generate_password_hash(ui_password, method="sha256"),
         name=None,
         username=ui_username,
+        username_db=ui_username.lower(),
         fk_stripe_customer_id=None,
         fk_stripe_subscription_id=None
       )
@@ -160,7 +161,7 @@ def signup_function():
     # ------------------------ post method hit #2 - sign up page only end ------------------------
 
   localhost_print_function(' ------------------------ signup_function end ------------------------ ')
-  return render_template('not_signed_in/sign_up/index.html',user=current_user,error_message_to_html=sign_up_error_message)
+  return render_template('not_signed_in/sign_up/index.html',user=current_user,error_message_to_html=sign_up_error_message, redirect_var_username=randomly_generated_username)
 # ------------------------ individual route end ------------------------
 
 # ------------------------ individual route start ------------------------
