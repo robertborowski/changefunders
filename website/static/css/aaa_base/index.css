@@ -220,25 +220,25 @@
   margin: 0 200px;
 }
 .custom-mb-1 {
-  margin: 0 0 50px 0;
+  margin-bottom: 50px;
 }
 .custom-mb-2 {
-  margin: 0 0 25px 0;
+  margin-bottom: 25px;
 }
 .custom-mb-3 {
   margin-bottom: 75px;
 }
 .custom-mt-1 {
-  margin: 50px 0 0 0;
+  margin-top: 50px;
 }
 .custom-mt-2 {
-  margin: 25px 0 0 0;
+  margin-top: 25px;
 }
 .custom-my-1 {
   margin: 25px 0;
 }
 .custom-mr-1 {
-  margin: 0 25px 0 0;
+  margin-right: 25px;
 }
 /* ------------------------------------- margins end ------------------------------------- */
 /* ------------------------------------- navbar start ------------------------------------- */
@@ -261,28 +261,19 @@
   padding: 5px;
 }
 .custom-pt-1 {
-  padding: 100px 0 0 0;
+  padding-top: 100px;
 }
 .custom-pt-2 {
-  padding: 125px 0 0 0;
+  padding-top: 125px;
 }
 .custom-pt-3 {
-  padding: 25px 0 0 0;
+  padding-top: 25px;
 }
 .custom-pb-1 {
-  padding: 0 0 100px 0;
+  padding-bottom: 100px;
 }
 .custom-py-1 {
   padding: 50px 0 25px 0;
-}
-.custom-py-2 {
-  padding: 100px 0 25px 0;
-}
-.custom-py-3 {
-  padding: 100px 0 0px 0;
-}
-.custom-py-4 {
-  padding: 25px 0;
 }
 /* ------------------------------------- padding end ------------------------------------- */
 /* ------------------------------------- position start ------------------------------------- */
