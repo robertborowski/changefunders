@@ -118,6 +118,12 @@
 .custom-header-2 {
   font-size: 35px;
 }
+.custom-header-3 {
+  font-size: 50px;
+}
+.custom-header-4 {
+  font-size: 35px;
+}
 .custom-subheader-1 {
   font-size: 20px;
 }
@@ -220,6 +226,9 @@
 }
 .custom-my-1 {
   margin: 25px 0;
+}
+.custom-mr-1 {
+  margin: 0 25px 0 0;
 }
 /* ------------------------------------- margins end ------------------------------------- */
 /* ------------------------------------- navbar start ------------------------------------- */
@@ -414,10 +423,15 @@
   padding: 5px 10px;
   border-radius: 25px;
 }
-.custom-tag-blue-1 {
+.custom-tag-yellow-1 {
   border: 1px solid rgb(172 127 36 / 50%);
   color: rgb(172 127 36);
   background-color: rgb(255 215 134);
+}
+.custom-tag-green-1 {
+  border: 1px solid rgb(24 131 50 / 50%);
+  color: rgb(24 131 50);
+  background-color: rgb(165 231 168)
 }
 /* ------------------------------------- tags end ------------------------------------- */
 /* ------------------------------------- text start ------------------------------------- */

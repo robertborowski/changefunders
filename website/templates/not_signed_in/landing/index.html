@@ -80,7 +80,7 @@
     <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
       <div class="mb-3">
         <label for="uiEmailVariousPages1" class="form-label">Email</label>
-        <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}">
+        <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
       </div>
       <div class="text-center">
         <button type="submit" class="btn btn-primary">Get started</button>
@@ -138,8 +138,12 @@
     <h2 class="custom-header-1 custom-pt-1">Benefits</h2>
   </div>
   <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
-    <p>1. Proof of donation badge.</p>
-    <a href="/proof/olivia"><img src="/static/images/proof/proof_olivia.png" class="img-thumbnail rounded-circle mx-auto d-block shadow-lg" alt="donator proof"></a>
+    <p>Lead by example. Spread awareness by promoting the proof of your financial support!</p>
+    <a href="/proof/olivia"><img src="/static/images/landing/iphone_screenshot1.png" class="custom-img-size-1" alt="donator proof"></a>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p>Anyone who does not believe you actually donated can go to your verified profile URL and see the proof for themselves.</p>
+    <a href="/proof/olivia"><img src="/static/images/landing/iphone_screenshot_instagram.png" class="custom-img-size-1" alt="donator proof"></a>
   </div>
 </div>
 {% endblock %}
