@@ -20,6 +20,7 @@ from werkzeug.security import generate_password_hash
 from website.backend.utils.datetime import current_year_month_function
 from website.backend.redis import redis_connect_to_database_function, redis_check_if_referral_cookie_exists_function
 from website.backend.utils.browser import browser_response_set_referral_cookie_function
+from website.backend.utils.user_inputs import sanitize_username_function
 # ------------------------ imports end ------------------------
 
 
@@ -114,17 +115,35 @@ def candidates_reset_forgot_password_page_function(token):
 # ------------------------ individual route end ------------------------
 
 # ------------------------ individual route start ------------------------
-@views.route('/proof')
+@views.route('/proof', methods=['GET', 'POST'])
 def proof_page_function():
   localhost_print_function(' ------------------------ proof_page_function start ------------------------')
   proof_error_statement=''
+  ui_username = ''
   # ------------------------ redirect messages start ------------------------
   var1 = request.args.get('var1')
   if var1 == 'Username does not exist.':
     proof_error_statement = var1
   # ------------------------ redirect messages end ------------------------
+  # ------------------------ post start ------------------------
+  if request.method == 'POST':
+    ui_username = request.form.get('uiUsername')
+    # ------------------------ sanitize/check user input email start ------------------------
+    ui_username_cleaned = sanitize_username_function(ui_username)
+    if ui_username_cleaned == False:
+      proof_error_statement = 'Please enter a valid username.'
+    # ------------------------ sanitize/check user input email end ------------------------
+    # ------------------------ check if user email already exists in db start ------------------------
+    user_exists = UserObj.query.filter_by(username_db=ui_username.lower()).first()
+    if user_exists:
+      localhost_print_function(' ------------------------ proof_page_function end ------------------------ ')
+      return redirect(url_for('views.i_proof_page_function', search_username=ui_username.lower()))
+    else:
+      proof_error_statement = 'Username does not exist.'
+    # ------------------------ check if user email already exists in db start ------------------------
+  # ------------------------ post end ------------------------
   localhost_print_function(' ------------------------ proof_page_function end ------------------------')
-  return render_template('not_signed_in/proof/index.html', user=current_user, error_message_to_html=proof_error_statement)
+  return render_template('not_signed_in/proof/index.html', user=current_user, error_message_to_html=proof_error_statement, redirect_var_username=ui_username)
 # ------------------------ individual route end ------------------------
 
 # ------------------------ individual route start ------------------------

@@ -9,11 +9,32 @@
 <!-- ------------------------------------- title end ------------------------------------- -->
 <!-- ------------------------------------- content start ------------------------------------- -->
 {% block contentBodyExceptNavbarAndFooter %}
-<div class="container-fluid pt-5 custom-bg-yellow-1">
-  <div class="container">
-    <p>{{ error_message_to_html }}</p>
-    <p>Hello, proof page</p>
+<div class="container-fluid custom-pt-1">
+  
+  {% if error_message_to_html != '' %}
+  <div class="alert alert-danger form-custom-width-1 mx-auto custom-mb-1" role="alert">
+    {{ error_message_to_html }}
   </div>
+  {% endif %}
+  
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1">
+    <p class="text-center custom-subheader-1">Prove donation</p>
+    <label for="uiUsername" class="d-inline-block">Username</label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">@</span>
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="uiUsername" name="uiUsername" value="{{ redirect_var_username }}" aria-describedby="basic-addon1">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Lookup</button>
+    </div>
+  </form>
+
+  <div class="container text-center custom-pt-3">
+    <a href="/signup" class="custom-a-1 d-block custom-mt-3">Create account</a>
+    <a href="/login" class="custom-a-1 d-block custom-mt-3">Login</a>
+  </div>
+
+  <div class="custom-height-filler-2"></div>
 </div>
 {% endblock %}
 <!-- ------------------------------------- content end ------------------------------------- -->
