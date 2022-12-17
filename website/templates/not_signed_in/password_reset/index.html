@@ -9,11 +9,16 @@
 <!-- ------------------------------------- title end ------------------------------------- -->
 <!-- ------------------------------------- content start ------------------------------------- -->
 {% block contentBodyExceptNavbarAndFooter %}
-<div class="container-fluid pt-5 custom-bg-yellow-1">
-  <div class="border-red">
-    <p>{{ error_message_to_html }}</p>
+<div class="container-fluid custom-pt-1">
+  
+  {% if error_message_to_html != '' %}
+  <div class="alert alert-success form-custom-width-1 mx-auto custom-mb-1" role="alert">
+    {{ error_message_to_html }}
   </div>
+  {% endif %}
+  
   <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1">
+    <p class="text-center custom-subheader-1">Password reset</p>
     <div class="mb-4">
       <label for="uiPassword" class="form-label">Password</label>
       <input type="password" class="form-control" id="uiPassword" name="uiPassword">
@@ -26,7 +31,8 @@
       <button type="submit" class="btn btn-primary">Send email</button>
     </div>
   </form>
-  <div class="custom-height-filler-1"></div>
 </div>
+
+<div class="custom-height-filler-2"></div>
 {% endblock %}
 <!-- ------------------------------------- content end ------------------------------------- -->
