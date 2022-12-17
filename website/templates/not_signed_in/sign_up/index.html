@@ -9,11 +9,16 @@
 <!-- ------------------------------------- title end ------------------------------------- -->
 <!-- ------------------------------------- content start ------------------------------------- -->
 {% block contentBodyExceptNavbarAndFooter %}
-<div class="container-fluid pt-5 custom-bg-yellow-1">
-  <div class="border-black">
-    <p>{{ error_message_to_html }}</p>
+<div class="container-fluid custom-pt-1">
+  
+  {% if error_message_to_html != '' %}
+  <div class="alert alert-danger form-custom-width-1 mx-auto custom-mb-1" role="alert">
+    {{ error_message_to_html }}
   </div>
+  {% endif %}
+  
   <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1">
+    <p class="text-center custom-subheader-1">Create account</p>
     <div class="mb-3">
       <label for="uiEmail" class="form-label">Email</label>
       <input type="email" class="form-control" placeholder="Email" id="uiEmail" name="uiEmail" value="{{ redirect_var_email }}">
@@ -36,7 +41,12 @@
       <button type="submit" class="btn btn-primary">Create account</button>
     </div>
   </form>
-  <div class="custom-height-filler-1"></div>
+
+  <div class="container text-center custom-pt-3">
+    <a href="/login" class="custom-a-1 d-block custom-mt-3">Login</a>
+  </div>
+
+  <div class="custom-height-filler-2"></div>
 </div>
 {% endblock %}
 <!-- ------------------------------------- content end ------------------------------------- -->
