@@ -133,6 +133,9 @@
 .custom-subheader-3 {
   font-size: 10px;
 }
+.custom-subheader-4 {
+  font-size: 30px;
+}
 /* ------------------------------------- header/subheader end ------------------------------------- */
 /* ------------------------------------- highlight start ------------------------------------- */
 .custom-username-highlight-1,
@@ -187,7 +190,7 @@
   max-width: 100%;
 }
 .custom-img-size-3 {
-  width: 200px;
+  width: 250px;
   max-width: 100%;
 }
 .custom-org-logo-wide-1 {
@@ -210,6 +213,9 @@
 }
 /* ------------------------------------- index end ------------------------------------- */
 /* ------------------------------------- margins start ------------------------------------- */
+.custom-m-0 {
+  margin: 0px;
+}
 .custom-m-1 {
   margin: 25px;
 }
@@ -260,6 +266,9 @@
 .custom-p-1 {
   padding: 5px;
 }
+.custom-p-2 {
+  padding: 15px 5px;
+}
 .custom-pt-1 {
   padding-top: 100px;
 }
@@ -271,6 +280,9 @@
 }
 .custom-pb-1 {
   padding-bottom: 100px;
+}
+.custom-pb-2 {
+  padding-bottom: 25px;
 }
 .custom-py-1 {
   padding: 50px 0 25px 0;
@@ -481,5 +493,8 @@
 }
 .custom-max-width-2 {
   max-width: 90%;
+}
+.custom-max-width-3 {
+  max-width: 250px;
 }
 /* ------------------------------------- width end ------------------------------------- */
