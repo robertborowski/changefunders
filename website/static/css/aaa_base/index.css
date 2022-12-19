@@ -39,6 +39,7 @@
 /* ------------------------------------- backgrounds end ------------------------------------- */
 /* ------------------------------------- borders start ------------------------------------- */
 .custom-border-black {border: 1px solid black;}
+.custom-border-grey-1 {border: 1px solid rgb(237, 237, 237);}
 .custom-border-blue {border: 1px solid blue;}
 .custom-border-red {border: 1px solid red;}
 .custom-border-green {border: 1px solid green;}
@@ -285,6 +286,9 @@
 }
 /* ------------------------------------- navbar end ------------------------------------- */
 /* ------------------------------------- padding start ------------------------------------- */
+.custom-p-0 {
+  padding: 0px;
+}
 .custom-p-1 {
   padding: 5px;
 }
@@ -473,23 +477,22 @@
   fill: rgb(34 39 56);
 }
 
-.custom-shape-divider-top-1671305320 {
+.custom-shape-divider-bottom-1671483614 {
   position: relative;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
 }
-.custom-shape-divider-top-1671305320 svg {
+.custom-shape-divider-bottom-1671483614 svg {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
   height: 150px;
 }
-.custom-shape-divider-top-1671305320 .shape-fill {
-  /* fill: #FFFFFF; */
-  fill: rgb(34 39 56);
+.custom-shape-divider-bottom-1671483614 .shape-fill {
+  fill: #FFFFFF;
 }
 /* ------------------------------------- shape divider end ------------------------------------- */
 /* ------------------------------------- tags start ------------------------------------- */
