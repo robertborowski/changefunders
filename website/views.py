@@ -187,3 +187,11 @@ def i_proof_page_function(search_username):
     return browser_response
   # ------------------------ auto set cookie end ------------------------
 # ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/about')
+def about_page_function():
+  localhost_print_function(' ------------------------ about_page_function start ------------------------')
+  localhost_print_function(' ------------------------ about_page_function end ------------------------')
+  return render_template('not_signed_in/about/index.html', user=current_user)
+# ------------------------ individual route end ------------------------
