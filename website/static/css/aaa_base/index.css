@@ -269,6 +269,9 @@
 .custom-mr-1 {
   margin-right: 25px;
 }
+.custom-ml-1 {
+  margin-left: 50px;
+}
 /* ------------------------------------- margins end ------------------------------------- */
 /* ------------------------------------- navbar start ------------------------------------- */
 .visual-hidden {
@@ -295,6 +298,9 @@
 .custom-p-2 {
   padding: 15px 5px;
 }
+.custom-p-3 {
+  padding: 35px;
+}
 .custom-pt-1 {
   padding-top: 100px;
 }
@@ -310,6 +316,9 @@
 .custom-pb-2 {
   padding-bottom: 25px;
 }
+.custom-pb-3 {
+  padding-bottom: 50px;
+}
 .custom-py-1 {
   padding: 50px 0 25px 0;
 }
@@ -319,6 +328,15 @@
   position: relative;
 }
 /* ------------------------------------- position end ------------------------------------- */
+/* ------------------------------------- quote start ------------------------------------- */
+.custom-quote-section-1 {
+  border-top: 3px solid var(--bs-primary);
+  border-bottom: 3px solid var(--bs-primary);
+  color: rgb(165, 165, 165);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+}
+/* ------------------------------------- quote end ------------------------------------- */
 /* ------------------------------------- rounding start ------------------------------------- */
 .custom-border-radius-1 {
   border-radius: 25px;
@@ -541,5 +559,8 @@
 }
 .custom-max-width-3 {
   max-width: 250px;
+}
+.custom-max-width-4 {
+  max-width: 800px;
 }
 /* ------------------------------------- width end ------------------------------------- */
