@@ -195,3 +195,19 @@ def about_page_function():
   localhost_print_function(' ------------------------ about_page_function end ------------------------')
   return render_template('not_signed_in/about/index.html', user=current_user)
 # ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/blog')
+def blog_page_function():
+  localhost_print_function(' ------------------------ blog_page_function start ------------------------')
+  localhost_print_function(' ------------------------ blog_page_function end ------------------------')
+  return render_template('not_signed_in/blog/index.html', user=current_user)
+# ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/blog/<i_blog_post_num>')
+def blog_i_page_function(i_blog_post_num):
+  localhost_print_function(' ------------------------ blog_i_page_function start ------------------------')
+  localhost_print_function(' ------------------------ blog_i_page_function end ------------------------')
+  return render_template(f'not_signed_in/blog/blog_i/{i_blog_post_num}.html', user=current_user)
+# ------------------------ individual route end ------------------------

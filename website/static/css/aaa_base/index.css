@@ -12,6 +12,14 @@
   text-decoration: underline;
   cursor: pointer;
 }
+.custom-a-3, .custom-a-3:visited {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.custom-a-3:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
 /* ------------------------------------- a end ------------------------------------- */
 /* ------------------------------------- backgrounds start ------------------------------------- */
 .custom-bg-yellow-1 {
@@ -246,6 +254,9 @@
 }
 .custom-m-2 {
   margin: 5px;
+}
+.custom-m-3 {
+  margin: 25px 50px;
 }
 .custom-mx-1 {
   margin: 0 200px;
@@ -581,5 +592,9 @@
 }
 .custom-max-width-4 {
   max-width: 800px;
+}
+.custom-width-card-1 {
+  min-width: 18rem;
+  max-width: 18rem;
 }
 /* ------------------------------------- width end ------------------------------------- */
