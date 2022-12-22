@@ -1,0 +1,42 @@
+{% extends "aaa_base/base.html" %}
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>base2_child1_not_signed_in_yes_navbar_and_footer.html</title>
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+
+{% block contentBody %}
+<!-- ------------------------------------- navbar start ------------------------------------- -->
+<div class="container-fluid custom-bg-white fixed-top shadow-sm">
+  <nav class="container navbar navbar-expand-md navbar-light">
+    <a href="/" class="navbar-brand">
+      <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funders</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-lable="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="toggleMobileMenu">
+      <ul class="navbar-nav ms-auto text-center">
+        <li><a href="/proof" class="nav-link mx-2">Proof</a></li>
+        <li><a href="/login" class="nav-link mx-2">Account</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- ------------------------------------- navbar end ------------------------------------- -->
+<!-- ------------------------------------- navbar filler start ------------------------------------- -->
+<div class="custom-height-navbar-1"></div>
+<!-- ------------------------------------- navbar filler end ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+{% endblock %}
+<!-- ------------------------------------- footer start ------------------------------------- -->
+<div class="containter-fluid">
+  <footer class="container">
+    <div class="custom-footer-lower-1">
+      <p>2022 Nonprofit | <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funders</span></p>
+      <p>contact@changefunders.org</p>
+    </div>
+  </footer>
+</div>
+<!-- ------------------------------------- footer end ------------------------------------- -->
+{% endblock %}
