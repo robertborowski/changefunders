@@ -219,3 +219,19 @@ def faq_page_function():
   localhost_print_function(' ------------------------ faq_page_function end ------------------------')
   return render_template('not_signed_in/faq/index.html', user=current_user)
 # ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/privacy')
+def privacy_page_function():
+  localhost_print_function(' ------------------------ privacy_page_function start ------------------------')
+  localhost_print_function(' ------------------------ privacy_page_function end ------------------------')
+  return render_template('not_signed_in/privacy/index.html', user=current_user)
+# ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/tos')
+def tos_page_function():
+  localhost_print_function(' ------------------------ tos_page_function start ------------------------')
+  localhost_print_function(' ------------------------ tos_page_function end ------------------------')
+  return render_template('not_signed_in/tos/index.html', user=current_user)
+# ------------------------ individual route end ------------------------
