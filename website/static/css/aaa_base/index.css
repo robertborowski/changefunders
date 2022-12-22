@@ -279,6 +279,9 @@
 .custom-mt-3 {
   margin-top: 15px;
 }
+.custom-mt-4 {
+  margin-top: 100px;
+}
 .custom-my-1 {
   margin: 25px 0;
 }
@@ -329,6 +332,9 @@
 }
 .custom-pt-3 {
   padding-top: 25px;
+}
+.custom-pt-4 {
+  padding-top: 50px;
 }
 .custom-pb-1 {
   padding-bottom: 100px;
@@ -595,6 +601,9 @@
   max-width: 250px;
 }
 .custom-max-width-4 {
+  max-width: 800px;
+}
+.custom-max-width-5 {
   max-width: 800px;
 }
 .custom-width-card-1 {

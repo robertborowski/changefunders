@@ -17,8 +17,8 @@ class UserObj(db.Model, UserMixin):   # Only the users object inherits UserMixin
   phone = db.Column(db.String(20), unique=True)
   password = db.Column(db.String(150))
   name = db.Column(db.String(150))
-  username = db.Column(db.String(15))
-  username_db = db.Column(db.String(15))
+  username = db.Column(db.String(15), unique=True)
+  username_db = db.Column(db.String(15), unique=True)
   referred_by_username_db = db.Column(db.String(15))
   fk_stripe_customer_id = db.Column(db.String(150))
   fk_stripe_subscription_id = db.Column(db.String(150))
@@ -43,4 +43,21 @@ class CollectEmailObj(db.Model):
   created_timestamp = db.Column(db.DateTime(timezone=True))
   email = db.Column(db.String(150))
 # ------------------------ individual model end ------------------------
+
+# ------------------------ individual model start ------------------------
+class StripeCheckoutSessionObj(db.Model):
+  id = db.Column(db.String(150), primary_key=True)
+  created_timestamp = db.Column(db.DateTime(timezone=True))
+  fk_checkout_session_id = db.Column(db.String(150))
+  fk_user_id = db.Column(db.String(150))
+# ------------------------ individual model end ------------------------
+
+"""
+# ------------------------ individual model start ------------------------
+class DonationsObj(db.Model):
+  id = db.Column(db.String(150), primary_key=True)
+  created_timestamp = db.Column(db.DateTime(timezone=True))
+  fk_user_id = db.Column(db.String(150))
+# ------------------------ individual model end ------------------------
+"""
 # ------------------------ models end ------------------------
