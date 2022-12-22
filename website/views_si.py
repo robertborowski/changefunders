@@ -42,3 +42,12 @@ def dashboard_page_function():
     return browser_response
   # ------------------------ auto set cookie end ------------------------
 # ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views_si.route('/account')
+@login_required
+def account_page_function():
+  localhost_print_function(' ------------------------ account_page_function start ------------------------')
+  localhost_print_function(' ------------------------ account_page_function end ------------------------')
+  return render_template('signed_in/account/index.html', user=current_user)
+# ------------------------ individual route end ------------------------
