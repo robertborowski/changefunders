@@ -13,7 +13,7 @@ from website.backend.utils.printing import localhost_print_function
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from flask_login import login_required, current_user, login_user
 from website.backend.utils.user_inputs import sanitize_email_function, sanitize_password_function
-from website.models import UserObj
+from website.models import UserObj, ContactObj
 from website import db
 from website.backend.utils.send_emails import send_email_template_function
 from werkzeug.security import generate_password_hash
@@ -21,6 +21,7 @@ from website.backend.utils.datetime import current_year_month_function
 from website.backend.redis import redis_connect_to_database_function, redis_check_if_referral_cookie_exists_function
 from website.backend.utils.browser import browser_response_set_referral_cookie_function
 from website.backend.utils.user_inputs import sanitize_username_function
+from website.backend.utils.uuid_and_timestamp import create_uuid_function, create_timestamp_function
 # ------------------------ imports end ------------------------
 
 
@@ -234,4 +235,46 @@ def tos_page_function():
   localhost_print_function(' ------------------------ tos_page_function start ------------------------')
   localhost_print_function(' ------------------------ tos_page_function end ------------------------')
   return render_template('not_signed_in/tos/index.html', user=current_user)
+# ------------------------ individual route end ------------------------
+
+# ------------------------ individual route start ------------------------
+@views.route('/contact', methods=['GET', 'POST'])
+def contact_page_function():
+  localhost_print_function(' ------------------------ contact_page_function start ------------------------')
+  sign_up_error_message = ''
+  if request.method == 'POST':
+    # ------------------------ post method hit #2 - sign up page only start ------------------------
+    ui_email = request.form.get('uiEmail')
+    ui_utextbox = request.form.get('uiTextBox')
+    # ------------------------ sanitize/check user inputs start ------------------------
+    # ------------------------ sanitize/check user input email start ------------------------
+    ui_email_cleaned = sanitize_email_function(ui_email)
+    if ui_email_cleaned == False:
+      sign_up_error_message = 'Please enter a valid email.'
+    # ------------------------ sanitize/check user input email end ------------------------
+    # ------------------------ sanitize/check user inputs end ------------------------
+    # ------------------------ if user input error start ------------------------
+    if sign_up_error_message != '':
+      localhost_print_function(' ------------------------ signup_function end ------------------------ ')
+      return render_template('not_signed_in/contact/index.html',
+                              user=current_user,
+                              error_message_to_html=sign_up_error_message,
+                              redirect_var_email=ui_email,
+                              redirect_var_textbox=ui_utextbox)
+    # ------------------------ if user input error end ------------------------
+    else:
+      # ------------------------ create new user in db start ------------------------
+      new_contact = ContactObj(
+        id=create_uuid_function('contact_'),
+        created_timestamp=create_timestamp_function(),
+        email=ui_email,
+        message=ui_utextbox
+      )
+      db.session.add(new_contact)
+      db.session.commit()
+      sign_up_error_message = 'Thank you!'
+      # ------------------------ create new user in db end ------------------------
+    # ------------------------ post method hit #2 - sign up page only end ------------------------
+  localhost_print_function(' ------------------------ contact_page_function end ------------------------')
+  return render_template('not_signed_in/contact/index.html', user=current_user, error_message_to_html=sign_up_error_message)
 # ------------------------ individual route end ------------------------

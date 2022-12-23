@@ -52,6 +52,14 @@ class StripeCheckoutSessionObj(db.Model):
   fk_user_id = db.Column(db.String(150))
 # ------------------------ individual model end ------------------------
 
+# ------------------------ individual model start ------------------------
+class ContactObj(db.Model):
+  id = db.Column(db.String(150), primary_key=True)
+  created_timestamp = db.Column(db.DateTime(timezone=True))
+  email = db.Column(db.String(150))
+  message = db.Column(db.String(500))
+# ------------------------ individual model end ------------------------
+
 """
 # ------------------------ individual model start ------------------------
 class DonationsObj(db.Model):

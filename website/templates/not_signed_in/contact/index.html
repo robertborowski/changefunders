@@ -1,0 +1,59 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Blog - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid custom-pt-1">
+
+  {% if error_message_to_html != '' %}
+  <div class="alert alert-success form-custom-width-1 mx-auto custom-mb-1" role="alert">
+    {{ error_message_to_html }}
+  </div>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1">
+    <p class="text-center custom-subheader-1">Contact</p>
+    <div class="mb-3">
+      <label for="uiEmail" class="form-label">Email</label>
+      <input type="email" class="form-control" placeholder="Email" id="uiEmail" name="uiEmail" value="{{ redirect_var_email }}">
+    </div>
+    <div class="form-group custom-mb-2">
+      <label for="uiTextBox">Message</label>
+      <textarea class="form-control" id="uiTextBox" name="uiTextBox" rows="3" value="{{ redirect_var_textbox }}"></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  
+</div>
+
+
+<div class="container custom-pt-2">
+  <div class="container custom-border-grey-1 custom-max-width-3"></div>
+</div>
+
+<div class="container text-center custom-pt-2">
+  <p class="custom-header-2 custom-mb-1">Become a <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funder</span> today.</p>
+</div>
+<div class="container text-center custom-pb-1">
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
+    <div class="mb-3">
+      <label for="uiEmailVariousPages1" class="form-label">Email</label>
+      <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+  </form>
+</div>
+
+<div class="custom-height-filler-2"></div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->
