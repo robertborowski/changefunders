@@ -20,6 +20,14 @@
   color: rgb(0, 0, 0);
   text-decoration: underline;
 }
+.custom-a-4, .custom-a-4:visited {
+  color: var(--custom-grey-1);
+  text-decoration: none;
+}
+.custom-a-4:hover {
+  color: var(--custom-grey-1);
+  text-decoration: underline;
+}
 /* ------------------------------------- a end ------------------------------------- */
 /* ------------------------------------- backgrounds start ------------------------------------- */
 .custom-bg-yellow-1 {
@@ -605,6 +613,9 @@
 }
 .custom-max-width-5 {
   max-width: 800px;
+}
+.custom-max-width-6 {
+  max-width: 500px;
 }
 .custom-width-card-1 {
   min-width: 18rem;

@@ -13,6 +13,21 @@
   <div class="text-center custom-pt-4 custom-pb-3">
     <h1 class="custom-header-2">Account</h1>
   </div>
+  <div class="text-center">
+    <img src="/static/images/proof/proof_template.png" alt="proof image" class="custom-max-width-6">
+  </div>
+
+  <form method="POST" enctype="multipart/form-data">
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - Create Question - Image Upload Start -->
+    <div>
+      <label for="uiImageUpload"></label>
+      <input type="file" id="uiImageUpload" name="uiImageUpload" oninput="filesize(this);">
+      <p>Accepted formats: [.jpeg | .jpg | .png].</p>
+    </div>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - Create Question - Image Upload End -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
 </div>
 {% endblock %}
 <!-- ------------------------------------- content end ------------------------------------- -->
