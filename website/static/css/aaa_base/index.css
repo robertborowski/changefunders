@@ -290,6 +290,9 @@
 .custom-mt-4 {
   margin-top: 100px;
 }
+.custom-mt-5 {
+  margin-top: 300px;
+}
 .custom-my-1 {
   margin: 25px 0;
 }
@@ -327,6 +330,9 @@
 }
 .custom-p-3 {
   padding: 35px;
+}
+.custom-pa-4 {
+  padding: 50px 25px;
 }
 .custom-ptb-1 {
   padding-top: 20px;

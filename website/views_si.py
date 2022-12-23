@@ -51,6 +51,8 @@ def dashboard_page_function():
 @login_required
 def account_page_function():
   localhost_print_function(' ------------------------ account_page_function start ------------------------')
+  return render_template('signed_in/dashboard/index.html', user=current_user)
+  """
   if request.method == 'POST':
     # ------------------------ ui uploaded image start ------------------------
     # ------------------------ define variable for insert start ------------------------
@@ -96,4 +98,5 @@ def account_page_function():
     # ------------------------ ui uploaded image end ------------------------
   localhost_print_function(' ------------------------ account_page_function end ------------------------')
   return render_template('signed_in/account/index.html', user=current_user)
+  """
 # ------------------------ individual route end ------------------------
