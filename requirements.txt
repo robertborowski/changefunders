@@ -10,3 +10,4 @@ psycopg2
 boto3
 sendgrid
 stripe
+itsdangerous==2.0.1
