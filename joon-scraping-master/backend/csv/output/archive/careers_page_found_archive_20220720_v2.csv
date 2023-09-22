@@ -1,0 +1,37 @@
+company_name,company_website,words_found_master_str,keyword_careers_found_and_clicked,keyword_benefits_found_on_page,keyword_category_found_on_page,keyword_googlesheetcategory_found_on_page
+weka,www.weka.io,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, keyword_category_found_on_page: learning, keyword_category_found_on_page: desk, ",True,False,True,False
+deepscribe,www.deepscribe.ai,",keyword_careers_found_and_clicked: openings, keyword_benefits_found_on_page: reimbursement, keyword_category_found_on_page: monitor, keyword_category_found_on_page: learning, ",True,True,True,False
+tecovas,tecovas.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+vivvi,vivvi.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: learning, ",True,False,True,False
+ironclad,www.ironcladapp.com/,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+clari,www.clari.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+spekit,spekit.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: remote, keyword_category_found_on_page: monitor, keyword_category_found_on_page: learning, keyword_category_found_on_page: desk, ",True,False,True,False
+nowsta,nowsta.com,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+capacity,capacity.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: learning, keyword_category_found_on_page: desk, ",True,False,True,False
+turing_labs,www.turingsaas.com/,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: learning, ",True,False,True,False
+anitian,www.anitian.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, keyword_category_found_on_page: internet, keyword_category_found_on_page: desk, ",True,False,True,False
+capital_markets_gateway,cmgx.io/,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+sollis_health,www.sollishealth.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: remote, keyword_category_found_on_page: desk, ",True,False,True,False
+kidztopros,kidztopros.com/,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: courses, keyword_category_found_on_page: learning, ",True,False,True,False
+order,order.co,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, keyword_category_found_on_page: desk, ",True,False,True,False
+sibros,www.sibros.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: remote, keyword_category_found_on_page: learning, keyword_category_found_on_page: desk, ",True,False,True,False
+polly,www.polly.io,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, keyword_category_found_on_page: gym, ",True,False,True,False
+lex_markets,www.LEX-markets.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+loadsmart,loadsmart.com/,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+taxfyle,www.taxfyle.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: learning, keyword_category_found_on_page: internet, keyword_category_found_on_page: desk, keyword_category_found_on_page: gym, ",True,False,True,False
+swoogo,www.swoogo.com,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+alchemy,alchemy.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, keyword_category_found_on_page: desk, ",True,False,True,False
+superconductive,www.superconductive.com/,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+kevala,www.kevala.care/,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+databook,www.trydatabook.com/,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: learning, keyword_category_found_on_page: desk, ",True,False,True,False
+terray_therapeutics,terraytx.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, keyword_category_found_on_page: learning, keyword_category_found_on_page: internet, keyword_category_found_on_page: desk, ",True,False,True,False
+uniphore,www.uniphore.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: fitness, keyword_category_found_on_page: monitor, keyword_category_found_on_page: internet, keyword_category_found_on_page: desk, ",True,False,True,False
+chronicled,chronicled.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+helium,www.helium.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: internet, keyword_category_found_on_page: desk, ",True,False,True,False
+bloomreach,www.bloomreach.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, ",True,False,True,False
+secureframe,secureframe.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: monitor, ",True,False,True,False
+promise,www.promise-pay.com/,",keyword_careers_found_and_clicked: openings, ",True,False,False,False
+fabric,fabric.inc,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+wave_sports__entertainment,www.wave.tv,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+canary_technologies,www.canarytechnologies.com,",keyword_careers_found_and_clicked: openings, keyword_category_found_on_page: desk, ",True,False,True,False
+maisonette,www.maisonette.com,",keyword_careers_found_and_clicked: careers, keyword_category_found_on_page: wellness, keyword_category_found_on_page: learning, keyword_category_found_on_page: desk, keyword_category_found_on_page: gym, ",True,False,True,False

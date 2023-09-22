@@ -1,0 +1,12 @@
+# ------------------ other start ------------------
+# Google Chrome: Version 103.0.5060.114 (Official Build) (x86_64)
+# Chrome web driver for above version of chrome^ (Mac)
+# ------------------ other end ------------------
+#
+#
+# ------------------ imports start ------------------
+# selenium: 4.3.0
+# time
+# os
+# re
+# ------------------ imports end ------------------

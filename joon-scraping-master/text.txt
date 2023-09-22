@@ -1,0 +1,24 @@
+localhost_print_function('- - - - - - - - - - - - - -')
+localhost_print_function('abc')
+localhost_print_function(abc)
+localhost_print_function(type(abc))
+localhost_print_function('- - - - - - - - - - - - - -')
+
+
+
+
+- build in check for the not found careers, so you don't have to focus on re running from nothing everytime
+
+
+test
+- 3 sec
+- 2 sec to make sure of failures
+- 1 sec again
+- 3 sec
+
+
+
+localhost_print_function(f'live_check_print_02.00: ')
+localhost_print_function(f'live_check_print_03.00: ')
+localhost_print_function(f'live_check_print_04.00: ')
+localhost_print_function(f'live_check_print_05.00: ')
