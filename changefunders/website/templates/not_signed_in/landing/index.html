@@ -1,0 +1,223 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Home - ChangeFunders</title>
+  <meta name="description" content="work in progress-">
+  <meta name="og:description" content="work in progress-">
+  <meta property="og:image" content="/static/images/proof/proof_ashley.png" />
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid custom-bg-yellow-1 custom-pt-1">
+  <div class="container-fluid custom-img-position-1 text-center">
+    <img src="/static/images/landing/clouds_group.png" alt="background cloud" class="custom-img-size-1 custom-img-index-1 custom-img-opacity-1">
+    <img src="/static/images/landing/clouds_group.png" alt="background cloud" class="custom-img-size-1 custom-img-index-1 custom-img-opacity-1">
+  </div>
+  <a href="/proof/ashley" target="_blank"><img src="/static/images/proof/proof_ashley.png" class="img-fluid img-thumbnail rounded-circle mx-auto d-block shadow-lg custom-max-width-2 custom-img-index-2 custom-img-position-2" alt="donator proof"></a>
+  <div class="container custom-mt-1 text-center mx-auto custom-stroke-1">
+    <h1 class="custom-header-2 custom-index-2 custom-position-relative custom-m-0">Fund the <span class="text-decoration-underline">change</span> you want to see in the world first &#127758;</h1>
+  </div>
+</div>
+<div class="custom-shape-divider-bottom-1670898795 custom-bg-yellow-1">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<div class="container-fluid custom-bg-red-1">
+  <div class="container text-center">
+    <h2 class="custom-header-1 custom-pt-1">"All talk"</h2>
+    <div class="container text-center custom-py-1 custom-subheader-1">
+      <p>A person who complains about how bad society is -</p>
+    </div>
+    <div class="container text-center">
+      <img src="/static/images/landing/tweet.png" alt="complaining tweet" class="custom-img-size-2 custom-border-radius-1 shadow-lg">
+    </div>
+    <div class="container text-center custom-py-1 custom-subheader-1">
+      <p>- but they do not contribute to any organizations that actually help society.</p>
+    </div>
+    <div class="container text-center">
+      <img src="/static/images/landing/orgsupportno.png" alt="complaining without contribution" class="custom-img-size-2 custom-border-radius-1 shadow-lg">
+    </div>
+    <div class="custom-height-filler-2"></div>
+  </div>
+</div>
+<div class="custom-shape-divider-bottom-1670899178 custom-bg-red-1">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<div class="container-fluid custom-bg-green-1">
+  <div class="container text-center">
+    <h2 class="custom-header-1 custom-pt-1">"Real talk"</h2>
+    <div class="container text-center custom-py-1 custom-subheader-1">
+      <p>A person who actually contributes to an organization that helps society -</p>
+    </div>
+    <div class="container text-center">
+      <img src="/static/images/landing/orgsupportyes.png" alt="person actually contributing" class="custom-img-size-2 custom-border-radius-1 shadow-lg">
+    </div>
+    <div class="container text-center custom-py-1 custom-subheader-1">
+      <p>- then they comment about how bad society is.</p>
+    </div>
+    <div class="container text-center">
+      <a href="/proof/sara" target="_blank"><img src="/static/images/landing/tweet2.png" alt="complaining without contribution" class="custom-img-size-2 custom-border-radius-1 shadow-lg"></a>
+    </div>
+    <div class="custom-height-filler-2"></div>
+  </div>
+</div>
+<div class="custom-shape-divider-bottom-1670932652 custom-bg-green-1">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<div class="container text-center">
+  <h2 class="custom-header-1 custom-pt-1">How it works</h2>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p>Step 1: Create account</p>
+  </div>
+  <div class="container">
+    <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
+      <div class="mb-3">
+        <label for="uiEmailVariousPages1" class="form-label">Email</label>
+        <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Get started</button>
+      </div>
+    </form>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p>Step 2: Choose an organization you support. We contribute to 100+ different charities and nonprofit organizations.</p>
+  </div>
+  <div class="container">
+    <img src="/static/images/organization_logos/alliance.png" alt="national alliance to end homelessness logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/amnesty.png" alt="amnesty international logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/aspca.png" alt="aspca logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/coolearth.png" alt="coolearth logo" class="custom-org-logo-wide-1 custom-m-1">
+    <img src="/static/images/organization_logos/feeding.png" alt="feeding america logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/freedom.png" alt="freedom house logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/innocenceproject.png" alt="innocence project logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/nami.png" alt="nami logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/famfriends2.png" alt="unicef logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+    <img src="/static/images/organization_logos/wounded.png" alt="wounded warriors project logo" class="custom-org-logo-wide-1 custom-m-1 custom-border-radius-1">
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p>Step 3: Actually subscribe to <span class="text-decoration-underline">change</span>.</p>
+    <p class="custom-subheader-2 custom-font-grey-1">Cancel anytime. At <span class="text-decoration-underline">change</span>funders we believe that recurring + reliable monthly funds are the only way these organizations can plan for and execute lasting positive <span class="text-decoration-underline">change</span> in society.</p>
+  </div>
+  <div class="container">
+    <input type="radio" class="btn-check " name="options-outlined" id="option1" autocomplete="off" checked>
+    <label class="btn btn-primary custom-m-2" for="option1"><span class="text-decoration-none fw-bold">$5</span><span class="custom-subheader-3"> /month</span></label>
+    
+    <input type="radio" class="btn-check" name="options-outlined" id="option2" autocomplete="off">
+    <label class="btn btn-primary custom-m-2" for="option2"><span class="text-decoration-none fw-bold">$10</span><span class="custom-subheader-3"> /month</span></label>
+    
+    <input type="radio" class="btn-check" name="options-outlined" id="option3" autocomplete="off">
+    <label class="btn btn-primary custom-m-2" for="option3"><span class="text-decoration-none fw-bold">$25</span><span class="custom-subheader-3"> /month</span></label>
+    
+    <input type="radio" class="btn-check" name="options-outlined" id="option4" autocomplete="off">
+    <label class="btn btn-primary custom-m-2" for="option4"><span class="text-decoration-none fw-bold">$50</span><span class="custom-subheader-3"> /month</span></label>
+    
+    <input type="radio" class="btn-check" name="options-outlined" id="option5" autocomplete="off">
+    <label class="btn btn-primary custom-m-2" for="option5"><span class="text-decoration-none fw-bold">$100+</span><span class="custom-subheader-3"> /month</span></label>
+
+    <span>|</span>
+    
+    <input type="radio" class="btn-check" name="options-outlined" id="option6" autocomplete="off">
+    <label class="btn btn-primary custom-m-2" for="option6"><span class="text-decoration-none fw-bold">One time</span><span class="custom-subheader-3"></span></label>
+  </div>
+  <img src="/static/images/stripe/stripe.png" alt="powered by stripe" class="custom-stripe-img-1 custom-mt-2">
+</div>
+<div class="custom-shape-divider-bottom-1671106341">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<div class="container-fluid custom-bg-yellow-1">
+  <div class="container text-center custom-pt-1">
+    <h2 class="custom-header-1">Benefits</h2>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p class="custom-pb-2">Every month you receive verified proof of your donation.</p>
+    <a href="/proof/olivia" target="_blank"><img src="/static/images/landing/iphone_screenshot1.png" class="custom-img-size-1" alt="donator proof"></a>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p class="custom-pb-2">Lead by example. Spread awareness. Promote your donation. Inspire others!</p>
+    <a href="/proof/olivia" target="_blank"><img src="/static/images/landing/iphone_tweet.png" class="custom-img-size-1" alt="donator proof"></a>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p class="custom-pb-2">Anyone who doubts you actually donated can go to your verified <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funders</span> URL and view the proof.</p>
+    <a href="/proof/olivia" target="_blank"><img src="/static/images/landing/twitter_profile.png" class="custom-img-size-1" alt="donator proof"></a>
+  </div>
+  <div class="custom-height-filler-2"></div>
+</div>
+<div class="custom-shape-divider-bottom-1671208657 custom-bg-yellow-1">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<div class="container-fluid text-center custom-bg-grey-3">
+  <div class="container text-center custom-pt-1">
+    <h2 class="custom-header-1 custom-font-white">Donation rotation &#128257;</h2>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p class="custom-pb-2 custom-font-white"><span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funders</span> can automatically rotate your monthly donation towards multiple organizations that you want to support.</p>
+    <img src="/static/images/landing/rotate_donation.png" class="custom-img-size-1 custom-border-radius-1 shadow-lg" alt="donator proof">
+  </div>
+  <div class="custom-height-filler-2"></div>
+</div>
+<div class="custom-shape-divider-bottom-1671483614 custom-bg-grey-3">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<div class="container-fluid text-center">
+  <div class="container text-center custom-pt-1">
+    <h2 class="custom-header-1">Awareness newsletter</h2>
+  </div>
+  <div class="container text-center custom-pt-2 custom-subheader-1 custom-max-width-1">
+    <p class="custom-mb-1">You receive a monthly newsletter custom built around the social causes that you support.</p>
+  </div>
+  <div class="container text-center custom-max-width-1">
+    <img src="/static/images/landing/gmail_notification2.png" class="custom-img-size-3 custom-border-radius-1 shadow-lg" alt="donator proof">
+  </div>
+  <div class="container text-center custom-pt-1 custom-max-width-1">
+    <p class="custom-subheader-1">Awareness newsletter includes:</h2>
+  </div>
+  <ul class="list-group custom-max-width-1 mx-auto">
+    <li class="list-group-item custom-p-2">Articles</li>
+    <li class="list-group-item custom-p-2">News & law updates</li>
+    <li class="list-group-item custom-p-2">Organizational announcements & events</li>
+    <li class="list-group-item custom-p-2">Success stories</li>
+    <li class="list-group-item custom-p-2">Social change updates</li>
+    <li class="list-group-item custom-p-2">Trending topics</li>
+  </ul>
+</div>
+
+<div class="container custom-pt-2">
+  <div class="container custom-border-grey-1 custom-max-width-3"></div>
+</div>
+
+<div class="container text-center custom-pt-2">
+  <p class="custom-header-2 custom-mb-1">Become a <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funder</span> today.</p>
+</div>
+<div class="container text-center custom-pb-1">
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
+    <div class="mb-3">
+      <label for="uiEmailVariousPages1" class="form-label">Email</label>
+      <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->

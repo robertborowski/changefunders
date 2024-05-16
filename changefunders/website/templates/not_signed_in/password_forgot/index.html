@@ -1,0 +1,34 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Forgot password - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid custom-pt-1">
+
+  {% if error_message_to_html != '' %}
+  <div class="alert alert-success form-custom-width-1 mx-auto custom-mb-1" role="alert">
+    {{ error_message_to_html }}
+  </div>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1">
+    <p class="text-center custom-subheader-1">Forgot password</p>
+    <div class="mb-3">
+      <label for="uiEmail" class="form-label">Email</label>
+      <input type="email" class="form-control " id="uiEmail" name="uiEmail">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Send email</button>
+    </div>
+  </form>
+</div>
+
+<div class="custom-height-filler-2"></div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->

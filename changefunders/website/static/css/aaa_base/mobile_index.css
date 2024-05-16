@@ -1,0 +1,36 @@
+@media (max-width: 1200px) {
+  /* ------------------------------------- footer start ------------------------------------- */
+  .custom-footer-all-links-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .custom-footer-lower-1 {
+    flex-direction: column;
+    text-align: center;
+  }
+  /* ------------------------------------- footer end ------------------------------------- */
+  /* ------------------------------------- header/subheader start ------------------------------------- */
+  .custom-header-3 {
+    font-size: 35px;
+  }
+  .custom-header-4 {
+    font-size: 25px;
+  }
+  /* ------------------------------------- header/subheader end ------------------------------------- */
+  /* ------------------------------------- images start ------------------------------------- */
+  .custom-img-position-1 {
+    top: 150px;
+  }
+  .custom-org-logo-wide-1 {
+    max-width: 150px;
+  }
+  .custom-m-1 {
+    margin: 10px;
+  }
+  /* ------------------------------------- images end ------------------------------------- */
+  /* ------------------------------------- width start ------------------------------------- */
+  .custom-max-width-5 {
+    max-width: 95%;
+  }
+  /* ------------------------------------- width end ------------------------------------- */
+}

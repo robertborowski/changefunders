@@ -1,0 +1,630 @@
+/* ------------------------------------- a start ------------------------------------- */
+.custom-a-1, .custom-a-1:visited {
+  color: rgb(172, 172, 172);
+  text-decoration: none;
+}
+.custom-a-2, .custom-a-2:visited {
+  color: rgb(0, 50, 110);
+  text-decoration: none;
+}
+.custom-a-1:hover, .custom-a-2:hover {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.custom-a-3, .custom-a-3:visited {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.custom-a-3:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+}
+.custom-a-4, .custom-a-4:visited {
+  color: var(--custom-grey-1);
+  text-decoration: none;
+}
+.custom-a-4:hover {
+  color: var(--custom-grey-1);
+  text-decoration: underline;
+}
+/* ------------------------------------- a end ------------------------------------- */
+/* ------------------------------------- backgrounds start ------------------------------------- */
+.custom-bg-yellow-1 {
+  background-color: #fef2da;
+}
+.custom-bg-colorful-1 {
+  background: linear-gradient(145deg, rgb(255 224 224)0%, rgb(255 254 221)25%, rgb(240 255 238)50%, rgb(233 209 255)100%);
+}
+.custom-bg-grey-1 {
+  background-color: rgb(250, 250, 250);
+}
+.custom-bg-grey-2 {
+  background-color: rgb(212, 212, 212);
+}
+.custom-bg-grey-3 {
+  background-color: rgb(34 39 56);
+}
+.custom-bg-white {
+  background-color: rgb(255, 255, 255);
+}
+.custom-bg-black {
+  background-color: rgb(0, 0, 0);
+}
+.custom-bg-red-1 {
+  background-color: rgb(254 219 219);
+}
+.custom-bg-green-1 {
+  background-color: rgb(219, 254, 220);
+}
+/* ------------------------------------- backgrounds end ------------------------------------- */
+/* ------------------------------------- borders start ------------------------------------- */
+.custom-border-black {border: 1px solid black;}
+.custom-border-grey-1 {border: 1px solid rgb(237, 237, 237);}
+.custom-border-blue {border: 1px solid blue;}
+.custom-border-red {border: 1px solid red;}
+.custom-border-green {border: 1px solid green;}
+.custom-border-purple {border: 1px solid purple;}
+.custom-border-orange {border: 1px solid orange;}
+.custom-border-radius-1 {
+  border-radius: 50px;
+}
+/* ------------------------------------- borders end ------------------------------------- */
+/* ------------------------------------- colors start ------------------------------------- */
+:root {
+  --custom-grey-1: rgb(120, 120, 120);
+}
+/* ------------------------------------- colors end ------------------------------------- */
+/* ------------------------------------- forms start ------------------------------------- */
+.form-custom-width-1 {
+  max-width: 600px;
+}
+/* ------------------------------------- forms end ------------------------------------- */
+/* ------------------------------------- font start ------------------------------------- */
+.custom-font-grey-1 {
+  color: var(--custom-grey-1);
+}
+.custom-font-white {
+  color: white;
+}
+/* ------------------------------------- font end ------------------------------------- */
+/* ------------------------------------- footer start ------------------------------------- */
+.custom-footer-background {
+  background-color: rgb(36, 36, 36);
+}
+.custom-footer-h1-1 {
+  color: rgb(185, 185, 185);
+}
+.custom-footer-all-links-1 {
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0 0 0;
+  flex-wrap: wrap;
+}
+.custom-footer-lower-1 {
+  /* border: 1px solid white; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 175px 0 50px 0;
+  color: var(--custom-grey-1);
+}
+.cutom-footer-ul-1 {
+  list-style: none;
+}
+.cutom-footer-li-1 {
+  padding: 10px 0;
+}
+.custom-footer-a-1, .custom-footer-a-1:visited {
+  color: var(--custom-grey-1);
+  text-decoration: none;
+}
+.custom-footer-a-1:hover {
+  color: var(--bs-primary);
+  text-decoration: underline;
+  transition: 0.5s;
+}
+.custom-shape-divider-top-1670803691 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-top-1670803691 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 199px;
+}
+.custom-shape-divider-top-1670803691 .shape-fill {
+  fill: #FFFFFF;
+}
+.custom-footer-social-media-icons-1 {
+  flex-wrap: wrap;
+}
+.custom-footer-icon-1 {
+  height: 25px;
+  max-width: 25px;
+  margin: 0 5px;
+}
+/* ------------------------------------- footer end ------------------------------------- */
+/* ------------------------------------- header/subheader start ------------------------------------- */
+.custom-header-1 {
+  font-size: 50px;
+}
+.custom-header-2 {
+  font-size: 35px;
+}
+.custom-header-3 {
+  font-size: 50px;
+}
+.custom-header-4 {
+  font-size: 35px;
+}
+.custom-subheader-1 {
+  font-size: 20px;
+}
+.custom-subheader-2 {
+  font-size: 12px;
+}
+.custom-subheader-3 {
+  font-size: 10px;
+}
+.custom-subheader-4 {
+  font-size: 30px;
+}
+/* ------------------------------------- header/subheader end ------------------------------------- */
+/* ------------------------------------- highlight start ------------------------------------- */
+.custom-username-highlight-1,
+.custom-username-highlight-1:visited {
+  color: rgb(0, 0, 0);
+}
+/* ------------------------------------- highlight end ------------------------------------- */
+/* ------------------------------------- height start ------------------------------------- */
+.custom-height-filler-1 {
+  height: 300px;
+}
+.custom-height-filler-2 {
+  height: 100px;
+}
+/* ------------------------------------- height end ------------------------------------- */
+/* ------------------------------------- images start ------------------------------------- */
+.custom-img-index-1 {
+  z-index: 1;
+}
+.custom-img-index-2 {
+  z-index: 2;
+}
+.custom-img-opacity-1 {
+  opacity: 0.7;
+}
+.custom-img-position-1 {
+  position: absolute;
+  top: 360px;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+}
+.custom-img-position-2 {
+  position: relative;
+}
+.custom-img-position-3 {
+  position: absolute;
+  top: 70px;
+  right: 5%;
+  max-width: 50%;
+}
+.custom-img-position-4 {
+  position: absolute;
+  max-width: 90%;
+  z-index: 1;
+}
+.custom-img-size-1 {
+  width: 600px;
+  max-width: 100%;
+}
+.custom-img-size-2 {
+  width: 500px;
+  max-width: 100%;
+}
+.custom-img-size-3 {
+  width: 250px;
+  max-width: 100%;
+}
+.custom-org-logo-wide-1 {
+  max-width: 200px;
+  max-height: 100px;
+}
+.custom-stripe-img-1 {
+  max-width: 150px;
+}
+/* ------------------------------------- images end ------------------------------------- */
+/* ------------------------------------- icon start ------------------------------------- */
+.custom-icon-1 {
+  max-width: 10px;
+  margin: 0 8px 0 0;
+}
+/* ------------------------------------- icon end ------------------------------------- */
+/* ------------------------------------- index start ------------------------------------- */
+.custom-index-2 {
+  z-index: 2;
+}
+/* ------------------------------------- index end ------------------------------------- */
+/* ------------------------------------- margins start ------------------------------------- */
+.custom-m-0 {
+  margin: 0px;
+}
+.custom-m-1 {
+  margin: 25px;
+}
+.custom-m-2 {
+  margin: 5px;
+}
+.custom-m-3 {
+  margin: 25px 50px;
+}
+.custom-mx-1 {
+  margin: 0 200px;
+}
+.custom-mb-1 {
+  margin-bottom: 50px;
+}
+.custom-mb-2 {
+  margin-bottom: 25px;
+}
+.custom-mb-3 {
+  margin-bottom: 75px;
+}
+.custom-mt-1 {
+  margin-top: 50px;
+}
+.custom-mt-2 {
+  margin-top: 25px;
+}
+.custom-mt-3 {
+  margin-top: 15px;
+}
+.custom-mt-4 {
+  margin-top: 100px;
+}
+.custom-mt-5 {
+  margin-top: 300px;
+}
+.custom-my-1 {
+  margin: 25px 0;
+}
+.custom-mr-1 {
+  margin-right: 25px;
+}
+.custom-ml-1 {
+  margin-left: 50px;
+}
+/* ------------------------------------- margins end ------------------------------------- */
+/* ------------------------------------- navbar start ------------------------------------- */
+.visual-hidden {
+  display: none;
+}
+.nav-link {
+  color: rgba(164, 164, 164, 0.6);
+}
+.nav-link:hover {
+  color: black;
+  transition: 0.5s;
+}
+.custom-height-navbar-1 {
+  height: 58px;
+}
+/* ------------------------------------- navbar end ------------------------------------- */
+/* ------------------------------------- padding start ------------------------------------- */
+.custom-p-0 {
+  padding: 0px;
+}
+.custom-p-1 {
+  padding: 5px;
+}
+.custom-p-2 {
+  padding: 15px 5px;
+}
+.custom-p-3 {
+  padding: 35px;
+}
+.custom-pa-4 {
+  padding: 50px 25px;
+}
+.custom-ptb-1 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.custom-pt-1 {
+  padding-top: 100px;
+}
+.custom-pt-2 {
+  padding-top: 125px;
+}
+.custom-pt-3 {
+  padding-top: 25px;
+}
+.custom-pt-4 {
+  padding-top: 50px;
+}
+.custom-pb-1 {
+  padding-bottom: 100px;
+}
+.custom-pb-2 {
+  padding-bottom: 25px;
+}
+.custom-pb-3 {
+  padding-bottom: 50px;
+}
+.custom-py-1 {
+  padding: 50px 0 25px 0;
+}
+/* ------------------------------------- padding end ------------------------------------- */
+/* ------------------------------------- position start ------------------------------------- */
+.custom-position-relative {
+  position: relative;
+}
+/* ------------------------------------- position end ------------------------------------- */
+/* ------------------------------------- quote start ------------------------------------- */
+.custom-quote-yellow-1 {
+  border-top: 3px solid var(--bs-primary);
+  border-bottom: 3px solid var(--bs-primary);
+}
+.custom-quote-red-1 {
+  border-top: 3px solid rgb(140, 0, 0);
+  border-bottom: 3px solid rgb(140, 0, 0);
+}
+.custom-quote-green-1 {
+  border-top: 3px solid rgb(0, 101, 22);
+  border-bottom: 3px solid rgb(0, 101, 22);
+}
+.custom-quote-blue-1 {
+  border-top: 3px solid rgb(57 109 197);
+  border-bottom: 3px solid rgb(57 109 197);
+}
+.custom-quote-text-1 {
+  color: rgb(165, 165, 165);
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+}
+/* ------------------------------------- quote end ------------------------------------- */
+/* ------------------------------------- rounding start ------------------------------------- */
+.custom-border-radius-1 {
+  border-radius: 25px;
+}
+/* ------------------------------------- rounding end ------------------------------------- */
+/* ------------------------------------- shape divider start ------------------------------------- */
+.custom-shape-divider-bottom-1670898795 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1670898795 svg {
+  position: relative;
+  display: block;
+  width: calc(159% + 1.3px);
+  height: 219px;
+}
+.custom-shape-divider-bottom-1670898795 .shape-fill {
+  /* fill: #FFFFFF; */
+  fill: rgb(254 219 219);
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1670898795 svg {
+      width: calc(150% + 1.3px);
+      height: 100px;
+  }
+}
+
+.custom-shape-divider-bottom-1670899178 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* overflow: hidden; */
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1670899178 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 250px;
+}
+.custom-shape-divider-bottom-1670899178 .shape-fill {
+  /* fill: #FFFFFF; */
+  fill: rgb(219, 254, 220);
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1670899178 svg {
+      width: calc(300% + 1.3px);
+      height: 150px;
+  }
+}
+
+.custom-shape-divider-bottom-1670932652 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1670932652 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 99px;
+}
+.custom-shape-divider-bottom-1670932652 .shape-fill {
+  fill: #FFFFFF;
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1670932652 svg {
+      width: calc(150% + 1.3px);
+      height: 99px;
+  }
+}
+
+.custom-shape-divider-bottom-1671106341 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.custom-shape-divider-bottom-1671106341 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 182px;
+}
+.custom-shape-divider-bottom-1671106341 .shape-fill {
+  /* fill: #FFFFFF; */
+  fill: #fef2da;
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1671106341 svg {
+      width: calc(100% + 1.3px);
+      height: 150px;
+  }
+}
+
+.custom-shape-divider-bottom-1671117078 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1671117078 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+.custom-shape-divider-bottom-1671117078 .shape-fill {
+  fill: #FFFFFF;
+}
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1671117078 svg {
+      width: calc(150% + 1.3px);
+      height: 100px;
+  }
+}
+
+.custom-shape-divider-bottom-1671208657 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.custom-shape-divider-bottom-1671208657 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+.custom-shape-divider-bottom-1671208657 .shape-fill {
+  /* fill: #FFFFFF; */
+  fill: rgb(34 39 56);
+}
+
+.custom-shape-divider-bottom-1671483614 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.custom-shape-divider-bottom-1671483614 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+.custom-shape-divider-bottom-1671483614 .shape-fill {
+  fill: #FFFFFF;
+}
+/* ------------------------------------- shape divider end ------------------------------------- */
+/* ------------------------------------- tags start ------------------------------------- */
+.custom-tag-1 {
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+.custom-tag-yellow-1 {
+  border: 1px solid rgb(172 127 36 / 50%);
+  color: rgb(172 127 36);
+  background-color: rgb(255 215 134);
+}
+.custom-tag-green-1 {
+  border: 1px solid rgb(24 131 50 / 50%);
+  color: rgb(24 131 50);
+  background-color: rgb(165 231 168)
+}
+/* ------------------------------------- tags end ------------------------------------- */
+/* ------------------------------------- text start ------------------------------------- */
+.custom-text-center-1 {
+  text-align: center;
+  align-items: center;
+}
+.custom-text-decoration-1 {
+  /* border: 1px solid black; */
+  width: 600px;
+  max-width: 95%;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 50px;
+  background-color: #fef2da;
+}
+.custom-text-decoration-2 {
+  /* border: 1px solid black; */
+  width: 600px;
+  max-width: 95%;
+  margin: 50px auto;
+}
+/* ------------------------------------- text end ------------------------------------- */
+/* ------------------------------------- width start ------------------------------------- */
+.custom-max-width-1 {
+  max-width: 550px;
+}
+.custom-max-width-2 {
+  max-width: 90%;
+}
+.custom-max-width-3 {
+  max-width: 250px;
+}
+.custom-max-width-4 {
+  max-width: 800px;
+}
+.custom-max-width-5 {
+  max-width: 800px;
+}
+.custom-max-width-6 {
+  max-width: 500px;
+}
+.custom-width-card-1 {
+  min-width: 18rem;
+  max-width: 18rem;
+}
+/* ------------------------------------- width end ------------------------------------- */

@@ -1,0 +1,26 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>404 - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid custom-pt-1">
+
+  <div class="alert alert-danger form-custom-width-1 mx-auto custom-mb-1" role="alert">
+    404 - URL not found
+  </div>
+
+  <div class="container text-center">
+    <a href="/dashboard"><button class="btn btn-primary">Dashboard</button></a>
+  </div>
+
+</div>
+
+<div class="custom-height-filler-2"></div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->

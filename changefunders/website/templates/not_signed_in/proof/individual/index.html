@@ -1,0 +1,53 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Proof - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid custom-bg-green-1">
+  <div class="container">
+    <!-- ------------------------------------- temporary logic start ------------------------------------- -->
+    <div class="container text-center custom-pt-1">
+      <p class="custom-header-3 custom-mb-2">{{ current_date_str_to_html }}</p>
+      <div class="container">
+        <ul class="list-group custom-max-width-3 mx-auto custom-pb-2">
+          <!-- <li class="list-group-item custom-bg-green-1 custom-p-2 custom-subheader-1">{{ current_date_str_to_html }}</li> -->
+          <li class="list-group-item custom-bg-green-1 custom-p-2">Amount: <span class="custom-tag-1 custom-tag-green-1"><i class="fa-solid fa-lock custom-icon-1"></i>private</span></li>
+          <li class="list-group-item custom-bg-green-1 custom-p-2">Organization: <span class="custom-tag-1 custom-tag-green-1"><i class="fa-solid fa-lock custom-icon-1"></i>private</span></li>
+        </ul>
+      </div>
+      <a href="/signup"><img src="{{ img_url_to_html }}" class="img-thumbnail rounded-circle mx-auto d-block shadow-lg" alt="donator proof"></a>
+      <div class="container custom-pb-1">
+        <h1 class="custom-header-4 custom-pt-3">Congrats @<a href="/signup" class="text-decoration-underline custom-username-highlight-1">{{ username_to_html }}</a> &#127881;! You are leading the <span class="text-decoration-underline">change</span> you want to see in the world &#127758;!</h1>
+      </div>
+    </div>
+    <!-- ------------------------------------- temporary logic end ------------------------------------- -->
+  </div>
+  <div class="custom-shape-divider-bottom-1671117078">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+  </div>
+</div>
+
+<div class="container text-center custom-pt-2">
+  <p class="custom-header-2 custom-mb-1">You can become a <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funder</span> too.</p>
+</div>
+<div class="container text-center custom-pb-1">
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
+    <div class="mb-3">
+      <label for="uiEmailVariousPages1" class="form-label">Email</label>
+      <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->

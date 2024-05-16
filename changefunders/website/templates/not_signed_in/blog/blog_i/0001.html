@@ -1,0 +1,80 @@
+{% extends "aaa_base/base2_child1_not_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Why donation subscription? - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container-fluid custom-pt-1">
+  <div class="container text-center custom-pb-3">
+    <h1 class="custom-header-1">How is <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funders</span> different?</h1>
+  </div>
+  <div class="container">
+    <div class="custom-pb-3 custom-max-width-4 mx-auto">
+      <h2 class="fw-bold custom-subheader-1 text-center">Most donations today</h2>
+      <p><span class="custom-ml-1">If</span> you have ever donated to a cause that you believe in odds are you were met with a checkout page that looks something like the ones below:</p>
+      <div class="text-center custom-ptb-1">
+        <img src="/static/images/blog/0001/feedingamerica.png" alt="feeding america checkout page" class="custom-img-size-2 custom-border-radius-1 shadow-lg">
+        <p class="custom-mt-3 custom-subheader-2 custom-font-grey-1"><a href="https://www.feedingamerica.org/" class="custom-a-2" target="_blank">Feeding America</a>'s donation checkout page</p>
+      </div>
+      <div class="text-center custom-ptb-1">
+        <img src="/static/images/blog/0001/innocence.png" alt="innocence project checkout page" class="custom-img-size-2 custom-border-radius-1 shadow-lg">
+        <p class="custom-mt-3 custom-subheader-2 custom-font-grey-1"><a href="https://innocenceproject.org/" class="custom-a-2" target="_blank">Innocence Project</a>'s donation checkout page</p>
+      </div>
+      <div class="text-center custom-ptb-1">
+        <img src="/static/images/blog/0001/aspca.png" alt="aspca checkout page" class="custom-img-size-2 custom-border-radius-1 shadow-lg">
+        <p class="custom-mt-3 custom-subheader-2 custom-font-grey-1"><a href="https://www.aspca.org/" class="custom-a-2" target="_blank">ASPCA</a>'s donation checkout page</p>
+      </div>
+      <p>These checkout pages feel very impersonal. With today’s average donation process you receive a “thank you for your donation” email from the organization, but that is usually it.</p>
+    </div>
+
+    <div class="custom-pb-3 custom-max-width-4 mx-auto">
+      <h2 class="fw-bold custom-subheader-1 text-center">Evolving donations now</h2>
+      <p><span class="custom-ml-1">At</span> changefunders we believe your leadership is rare and should be publicly celebrated + encouraged! Donate through changefunders and you receive more than just a “thank you for your donation email.”</p>
+      <p>We provide you with a verified “proof of donation” link that you can share with your followers and online community (donation amount & organization details are private by default). See example below:</p>
+      <div class="text-center custom-ptb-1">
+        <a href="/proof/olivia" target="_blank"><img src="/static/images/landing/iphone_screenshot1.png" class="custom-img-size-2" alt="donator proof"></a>
+        <p class="custom-mt-3 custom-subheader-2 custom-font-grey-1"><a href="/proof/olivia" class="custom-a-2" target="_blank">@Olivia</a>'s proof of donation. Click to see details.</p>
+      </div>
+      <p>Lead by example and post your donation to your preferred online community. This will encourage others to follow your lead, and donate towards the social cause that you care about.</p>
+      <div class="text-center custom-ptb-1">
+        <a href="/proof/olivia" target="_blank"><img src="/static/images/landing/iphone_tweet.png" class="custom-img-size-2" alt="donator proof"></a>
+        <p class="custom-mt-3 custom-subheader-2 custom-font-grey-1"><a href="/proof/olivia" class="custom-a-2" target="_blank">@Olivia</a>'s proof of donation tweet. Click to see details.</p>
+      </div>
+      <p>The world is full of frauds. Today’s standard “thank you for your donation” emails from organizations can be easily faked or photoshopped so there is no proof of donation there. At changefunders we support real leaders. Therefore, anyone who does not believe you actually donated can check your public “proof of donation” verified link for themselves.</p>
+      <div class="text-center custom-ptb-1">
+        <a href="/proof/olivia" target="_blank"><img src="/static/images/landing/twitter_profile.png" class="custom-img-size-2" alt="donator proof"></a>
+        <p class="custom-mt-3 custom-subheader-2 custom-font-grey-1"><a href="/proof/olivia" class="custom-a-2" target="_blank">@Olivia</a>'s verified proof of donation link. Click to see details.</p>
+      </div>
+      <p>Changefunders will also scrape the internet for the latest <span class="fst-italic">articles, news & law updates, organizational announcements & events, success stories, social change updates, and trending topics</span> around the cause that you support and provides you all that information in a monthly newsletter.</p>
+      <p>Changefunders provides you with proof of your donation and also keeps you up to date + informed around the social cause help you support!</p>
+    </div>
+  </div>
+</div>
+
+<div class="container custom-pt-2">
+  <div class="container custom-border-grey-1 custom-max-width-3"></div>
+</div>
+
+<div class="container text-center custom-pt-2">
+  <p class="custom-header-2 custom-mb-1">Become a <span class="text-decoration-underline">change</span><span class="text-decoration-none fw-bold">funder</span> today.</p>
+</div>
+<div class="container text-center custom-pb-1">
+  <form method="POST" enctype="multipart/form-data" class="form-custom-width-1 mx-auto p-5 border custom-border-radius-1 shadow-lg custom-bg-grey-1" action="{{ url_for('auth.signup_function') }}">
+    <div class="mb-3">
+      <label for="uiEmailVariousPages1" class="form-label">Email</label>
+      <input type="email" class="form-control " id="uiEmailVariousPages1" name="uiEmailVariousPages1" value="{{ redirect_var_email }}" required>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Get started</button>
+    </div>
+  </form>
+</div>
+
+<div class="custom-height-filler-2"></div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->

@@ -1,0 +1,33 @@
+{% extends "aaa_base/base2_child1_signed_in_yes_navbar_and_footer.html" %}
+
+<!-- ------------------------------------- title start ------------------------------------- -->
+{% block title %}
+  <title>Account - ChangeFunders</title>
+  <meta name="description" content="work in progress...">
+  <meta name="og:description" content="work in progress...">
+{% endblock %}
+<!-- ------------------------------------- title end ------------------------------------- -->
+<!-- ------------------------------------- content start ------------------------------------- -->
+{% block contentBodyExceptNavbarAndFooter %}
+<div class="container custom-mt-4 shadow-lg custom-border-radius-1 custom-max-width-5">
+  <div class="text-center custom-pt-4 custom-pb-3">
+    <h1 class="custom-header-2">Account</h1>
+  </div>
+  <div class="text-center">
+    <img src="/static/images/proof/proof_template.png" alt="proof image" class="custom-max-width-6">
+  </div>
+
+  <form method="POST" enctype="multipart/form-data">
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - Create Question - Image Upload Start -->
+    <div>
+      <label for="uiImageUpload"></label>
+      <input type="file" id="uiImageUpload" name="uiImageUpload" oninput="filesize(this);">
+      <p>Accepted formats: [.jpeg | .jpg | .png].</p>
+    </div>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - Create Question - Image Upload End -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+{% endblock %}
+<!-- ------------------------------------- content end ------------------------------------- -->
